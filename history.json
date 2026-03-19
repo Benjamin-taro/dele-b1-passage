@@ -1,0 +1,75 @@
+{
+  "entries": [
+    {
+      "date": "2026-03-10",
+      "category": "Daily life",
+      "subtopic": "Moving house",
+      "title": "Una mudanza complicada",
+      "vocab": ["mudanza", "acogedor", "disponible", "a última hora", "averiado", "escaleras", "inconvenientes", "agotador", "merecer la pena", "darse cuenta de"]
+    },
+    {
+      "date": "2026-03-10",
+      "category": "Travel & tourism",
+      "subtopic": "Hotel bookings",
+      "title": "Una reserva de hotel inesperada",
+      "vocab": ["reserva", "recepcionista", "habitación doble", "ilusión", "al parecer", "ahorrar", "solución", "vistas", "compensación", "estancia"]
+    },
+    {
+      "date": "2026-03-12",
+      "category": "Work & school",
+      "subtopic": "Job hunting",
+      "title": "La búsqueda de empleo",
+      "vocab": ["currículum", "carta de presentación", "solicitud", "destacar", "entrevista de trabajo", "ensayar", "entrevistador", "candidato", "puesto", "dar frutos"]
+    },
+    {
+      "date": "2026-03-13",
+      "category": "Health & sports",
+      "subtopic": "Exercise habits",
+      "title": "El gimnasio del barrio",
+      "vocab": ["sedentario", "echarse", "se la pasaba", "agotarse", "cuadra", "platicar", "armarle una rutina", "alimentación", "comida chatarra", "ánimo"]
+    },
+    {
+      "date": "2026-03-14",
+      "category": "Culture & society",
+      "subtopic": "Festivals",
+      "title": "La feria del pueblo",
+      "vocab": ["feria", "explanada", "antojitos", "hacerse agua la boca", "convivir", "adultos mayores", "chicos", "municipio", "artesano", "fuegos artificiales"]
+    },
+    {
+      "date": "2026-03-15",
+      "category": "Relationships",
+      "subtopic": "Life with a roommate",
+      "title": "Mi compañera de cuarto",
+      "vocab": ["rentar", "convivencia", "madrugada", "ponerse de acuerdo", "tareas del hogar", "repartir", "avisar", "sin darse cuenta", "volverse", "tolerante"]
+    },
+    {
+      "date": "2026-03-16",
+      "category": "Media & entertainment",
+      "subtopic": "Social media",
+      "title": "Un video que se hizo viral",
+      "vocab": ["redes sociales", "seguidores", "reproducciones", "repostear", "sin parar", "patrocinar", "medios de comunicación", "contenido", "auténtico", "presumir"]
+    }
+  ,
+    {
+      "date": "2026-03-17",
+      "category": "Daily life",
+      "subtopic": "Shopping at the market",
+      "title": "Un sábado en el mercado",
+      "vocab": ["puesto", "jitomate", "canasta", "especias", "hierbas de olor", "epazote", "amargo", "platillo", "billete", "sobrar"]
+    },
+    {
+      "date": "2026-03-18",
+      "category": "Travel & tourism",
+      "subtopic": "Travel mishaps",
+      "title": "Un viaje inesperado por carretera",
+      "vocab": ["con destino a", "a mitad del camino", "cargador", "desviación", "carretera", "ponerse nervioso", "gasolinera", "indicaciones", "señalando", "prometió"]
+    },
+    {
+      "date": "2026-03-19",
+      "category": "Work & school",
+      "subtopic": "School events",
+      "title": "La feria de ciencias",
+      "vocab": ["comunidad escolar", "entusiasmo", "regar", "anotar", "evidencia", "salón de actos", "sorprendente", "jurado", "diploma", "ambicioso"]
+    }
+  ]
+}
