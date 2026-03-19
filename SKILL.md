@@ -171,7 +171,16 @@ Each option must include its English and Japanese translation on the same line, 
 9. Create the `passages/YYYY-MM-DD/` directory
 10. Write the full output (Parts 1–5) to `passages/YYYY-MM-DD/YYYY-MM-DD.md`
 11. Write the same content as a styled, self-contained HTML file to `passages/YYYY-MM-DD/YYYY-MM-DD.html`
-12. Output only a short confirmation to the CLI: `✅ Saved to passages/YYYY-MM-DD/`
+12. Update `index.html` — prepend a new `<li>` entry at the top of the `<ul class="list">` block, using the same format as the existing entries, with the correct date, title, and category tag
+13. Run the following git commands (using Bash) to publish to GitHub Pages:
+    ```
+    git add passages/YYYY-MM-DD/ history.json index.html
+    git commit -m "passage: YYYY-MM-DD — [Title]"
+    git push origin main
+    ```
+14. Output only a short confirmation to the CLI:
+    `✅ Saved to passages/YYYY-MM-DD/ and pushed to GitHub Pages`
+    `🌐 https://benjamin-taro.github.io/dele-b1-passage/passages/YYYY-MM-DD/YYYY-MM-DD.html`
 
 ## Quality Checks
 
