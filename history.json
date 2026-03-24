@@ -98,6 +98,13 @@
       "subtopic": "Movies",
       "title": "La última función",
       "vocab": ["taquilla", "butaca", "ciudad natal", "banda sonora", "escena", "banqueta", "final abierto", "reseña", "crítico", "protagonista"]
+    },
+    {
+      "date": "2026-03-24",
+      "category": "Work & school",
+      "subtopic": "Workplace relationships",
+      "title": "El nuevo compañero de trabajo",
+      "vocab": ["incorporarse", "escritorio", "copiadora", "reglas no escritas", "taquería", "cuadra", "soltarse", "echar la mano", "agradecer", "tocarle a alguien"]
     }
   ]
 }
