@@ -112,6 +112,13 @@
       "subtopic": "Cooking",
       "title": "Una tarde en la cocina",
       "vocab": ["fideos", "dorar", "tostado", "caldo", "licuado", "cocerse", "picar", "patio", "acostumbrarse", "poner la mesa"]
+    },
+    {
+      "date": "2026-03-26",
+      "category": "Travel & tourism",
+      "subtopic": "Asking for directions",
+      "title": "¿Por dónde queda el museo?",
+      "vocab": ["camión", "cruce", "doblar", "esquina", "no tiene pérdida", "instrucciones", "letrero", "alivio", "cargado", "impreso"]
     }
   ]
 }
