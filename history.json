@@ -119,6 +119,13 @@
       "subtopic": "Asking for directions",
       "title": "¿Por dónde queda el museo?",
       "vocab": ["camión", "cruce", "doblar", "esquina", "no tiene pérdida", "instrucciones", "letrero", "alivio", "cargado", "impreso"]
+    },
+    {
+      "date": "2026-03-27",
+      "category": "Health & sports",
+      "subtopic": "Doctor visit",
+      "title": "La cita con el médico",
+      "vocab": ["cita", "consultorio", "fiebre", "síntoma", "analgésico", "infección", "recetar", "antibióticos", "reposo", "receta"]
     }
   ]
 }
