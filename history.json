@@ -126,6 +126,13 @@
       "subtopic": "Doctor visit",
       "title": "La cita con el médico",
       "vocab": ["cita", "consultorio", "fiebre", "síntoma", "analgésico", "infección", "recetar", "antibióticos", "reposo", "receta"]
+    },
+    {
+      "date": "2026-03-28",
+      "category": "Relationships",
+      "subtopic": "Friendships",
+      "title": "Una amistad que sobrevivió la distancia",
+      "vocab": ["llevarse bien", "apoyarse", "espaciarse", "malentendido", "disculparse", "punto de partida", "reconectar", "extrañar", "amistad", "vínculo"]
     }
   ]
 }
