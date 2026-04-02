@@ -147,6 +147,13 @@
       "subtopic": "Music",
       "title": "La primera presentación en vivo",
       "vocab": ["atreverse", "en vivo", "dudar", "ensayar", "echarse para atrás", "convencer", "latir", "nervios", "aplaudir", "escenario"]
+    },
+    {
+      "date": "2026-04-02",
+      "category": "Daily life",
+      "subtopic": "Public transport",
+      "title": "El metro en hora pico",
+      "vocab": ["trayecto", "abarrotado", "aviso", "altavoz", "falla técnica", "resignación", "retraso", "señal", "arrancar", "hora pico"]
     }
   ]
 }
