@@ -9,6 +9,15 @@ description: >
 
 # DELE B1 Daily Passage Generator
 
+## Usage
+
+```
+/dele-b1-passage [YYYY-MM-DD]
+```
+
+- **With date argument** (e.g. `/dele-b1-passage 2026-04-05`): generate a passage for that specific date.
+- **Without argument**: use today's date (from the `currentDate` context or system clock).
+
 ## Purpose
 
 Run once every morning to get a short DELE B1-level reading passage and a complete study set.
@@ -162,6 +171,7 @@ Each option must include its English and Japanese translation on the same line, 
 
 ## Execution Steps
 
+1. **Determine the target date**: Use the date argument if provided (YYYY-MM-DD format). Otherwise, use today's date from the `currentDate` context variable or system clock. All subsequent file paths, commit messages, and HTML titles must use this date.
 1. Read `history.json` (treat as empty if it does not exist)
 2. Refer to the history and select a non-overlapping theme category and subtopic
 3. Generate a B1-level passage on that theme
