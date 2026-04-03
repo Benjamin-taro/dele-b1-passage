@@ -154,6 +154,13 @@
       "subtopic": "Public transport",
       "title": "El metro en hora pico",
       "vocab": ["trayecto", "abarrotado", "aviso", "altavoz", "falla técnica", "resignación", "retraso", "señal", "arrancar", "hora pico"]
+    },
+    {
+      "date": "2026-04-03",
+      "category": "Work & school",
+      "subtopic": "Internship",
+      "title": "La práctica profesional",
+      "vocab": ["práctica profesional", "mercadotecnia", "junta", "aportación", "medio tiempo", "proponer", "investigación de mercado", "valioso", "supervisora", "graduarse"]
     }
   ]
 }
