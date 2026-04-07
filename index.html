@@ -24,8 +24,64 @@
       color: #888;
       font-size: 0.9rem;
       margin-top: -8px;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
+
+    /* --- View toggle --- */
+    .view-toggle {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1rem;
+    }
+    .view-btn {
+      padding: 5px 14px;
+      border: 1.5px solid #d4a96a;
+      border-radius: 20px;
+      background: #fff;
+      color: #7a5c3a;
+      font-size: 0.82rem;
+      font-family: sans-serif;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .view-btn.active {
+      background: #d4a96a;
+      color: #fff;
+      border-color: #d4a96a;
+    }
+    .view-btn:hover:not(.active) {
+      background: #fdf3e4;
+    }
+
+    /* --- Theme filter pills (日付順 mode) --- */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 1.2rem;
+    }
+    .filter-pill {
+      padding: 3px 12px;
+      border: 1.5px solid #ccc;
+      border-radius: 14px;
+      background: #fff;
+      color: #555;
+      font-size: 0.78rem;
+      font-family: sans-serif;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .filter-pill.active {
+      background: #4a3728;
+      color: #fff;
+      border-color: #4a3728;
+    }
+    .filter-pill:hover:not(.active) {
+      border-color: #a07850;
+      color: #4a3728;
+    }
+
+    /* --- Entry list --- */
     .list {
       list-style: none;
       padding: 0;
@@ -33,6 +89,9 @@
     }
     .list li {
       border-bottom: 1px solid #e8e0d6;
+    }
+    .list li.hidden {
+      display: none;
     }
     .list li a {
       display: flex;
@@ -56,6 +115,7 @@
     }
     .title-text {
       font-weight: bold;
+      flex: 1;
     }
     .tag {
       font-size: 0.75rem;
@@ -65,216 +125,449 @@
       border-radius: 10px;
       white-space: nowrap;
     }
+
+    /* --- Group headings (月別 / テーマ別) --- */
+    .group-section {
+      margin-bottom: 0.5rem;
+    }
+    .group-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 4px 6px;
+      font-family: sans-serif;
+      font-size: 0.88rem;
+      font-weight: bold;
+      color: #4a3728;
+      border-bottom: 2px solid #e8e0d6;
+      cursor: pointer;
+      user-select: none;
+    }
+    .group-heading:hover {
+      color: #7a5c3a;
+    }
+    .group-count {
+      font-weight: normal;
+      color: #aaa;
+      font-size: 0.8rem;
+    }
+    .group-arrow {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: #aaa;
+      transition: transform 0.2s;
+    }
+    .group-arrow.collapsed {
+      transform: rotate(-90deg);
+    }
+    .group-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+    .group-list.collapsed {
+      display: none;
+    }
+    .group-list li {
+      border-bottom: 1px solid #e8e0d6;
+    }
+    .group-list li a {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 12px 4px;
+      text-decoration: none;
+      color: #2d2d2d;
+      transition: background 0.15s;
+      gap: 12px;
+    }
+    .group-list li a:hover {
+      background: #fdf3e4;
+      border-radius: 4px;
+    }
+
+    /* テーマ別の tag は非表示（グループ名が代わり） */
+    .theme-view .tag { display: none; }
+
+    /* 月別では tag を表示、date を短縮 */
+    .month-view .date { display: none; }
+    .month-view-date {
+      font-size: 0.82rem;
+      color: #bbb;
+      white-space: nowrap;
+      font-family: monospace;
+      display: none;
+    }
+    .month-view .month-view-date { display: inline; }
   </style>
 </head>
 <body>
   <h1>📖 DELE B1 Daily Passages</h1>
   <p class="subtitle">毎日のスペイン語読解練習 — Latin American Spanish (Mexico-first)</p>
 
-  <ul class="list">
-    <li>
-      <a href="passages/2026-04-07/2026-04-07.html">
-        <span class="title-text">Las noticias de cada noche</span>
-        <span class="tag">Media &amp; entertainment</span>
-        <span class="date">2026-04-07</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-04-06/2026-04-06.html">
-        <span class="title-text">La primera cita</span>
-        <span class="tag">Relationships</span>
-        <span class="date">2026-04-06</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-04-05/2026-04-05.html">
-        <span class="title-text">Las clases de natación</span>
-        <span class="tag">Health &amp; sports</span>
-        <span class="date">2026-04-05</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-04-04/2026-04-04.html">
-        <span class="title-text">Una excursión a las pirámides</span>
-        <span class="tag">Travel &amp; tourism</span>
-        <span class="date">2026-04-04</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-04-03/2026-04-03.html">
-        <span class="title-text">La práctica profesional</span>
-        <span class="tag">Work &amp; school</span>
-        <span class="date">2026-04-03</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-04-02/2026-04-02.html">
-        <span class="title-text">El metro en hora pico</span>
-        <span class="tag">Daily life</span>
-        <span class="date">2026-04-02</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-04-01/2026-04-01.html">
-        <span class="title-text">La beca de intercambio</span>
-        <span class="tag">Work &amp; school</span>
-        <span class="date">2026-04-01</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-31/2026-03-31.html">
-        <span class="title-text">El vecino del quinto piso</span>
-        <span class="tag">Daily life</span>
-        <span class="date">2026-03-31</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-30/2026-03-30.html">
-        <span class="title-text">La primera presentación en vivo</span>
-        <span class="tag">Media &amp; entertainment</span>
-        <span class="date">2026-03-30</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-29/2026-03-29.html">
-        <span class="title-text">Cuidar el medio ambiente desde casa</span>
-        <span class="tag">Culture &amp; society</span>
-        <span class="date">2026-03-29</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-28/2026-03-28.html">
-        <span class="title-text">Una amistad que sobrevivió la distancia</span>
-        <span class="tag">Relationships</span>
-        <span class="date">2026-03-28</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-27/2026-03-27.html">
-        <span class="title-text">La cita con el médico</span>
-        <span class="tag">Health &amp; sports</span>
-        <span class="date">2026-03-27</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-26/2026-03-26.html">
-        <span class="title-text">¿Por dónde queda el museo?</span>
-        <span class="tag">Travel &amp; tourism</span>
-        <span class="date">2026-03-26</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-25/2026-03-25.html">
-        <span class="title-text">Una tarde en la cocina</span>
-        <span class="tag">Daily life</span>
-        <span class="date">2026-03-25</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-24/2026-03-24.html">
-        <span class="title-text">El nuevo compañero de trabajo</span>
-        <span class="tag">Work &amp; school</span>
-        <span class="date">2026-03-24</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-23/2026-03-23.html">
-        <span class="title-text">La última función</span>
-        <span class="tag">Media &amp; entertainment</span>
-        <span class="date">2026-03-23</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-22/2026-03-22.html">
-        <span class="title-text">La red del vecindario</span>
-        <span class="tag">Culture &amp; society</span>
-        <span class="date">2026-03-22</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-21/2026-03-21.html">
-        <span class="title-text">La visita de los abuelos</span>
-        <span class="tag">Relationships</span>
-        <span class="date">2026-03-21</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-20/2026-03-20.html">
-        <span class="title-text">El reto de comer sano</span>
-        <span class="tag">Health &amp; sports</span>
-        <span class="date">2026-03-20</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-19/2026-03-19.html">
-        <span class="title-text">La feria de ciencias</span>
-        <span class="tag">Work &amp; school</span>
-        <span class="date">2026-03-19</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-18/2026-03-18.html">
-        <span class="title-text">Un viaje inesperado por carretera</span>
-        <span class="tag">Travel &amp; tourism</span>
-        <span class="date">2026-03-18</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-17/2026-03-17.html">
-        <span class="title-text">Un sábado en el mercado</span>
-        <span class="tag">Daily life</span>
-        <span class="date">2026-03-17</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-16/2026-03-16.html">
-        <span class="title-text">Un video que se hizo viral</span>
-        <span class="tag">Media &amp; entertainment</span>
-        <span class="date">2026-03-16</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-15/2026-03-15.html">
-        <span class="title-text">Mi compañera de cuarto</span>
-        <span class="tag">Relationships</span>
-        <span class="date">2026-03-15</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-14/2026-03-14.html">
-        <span class="title-text">La feria del pueblo</span>
-        <span class="tag">Culture &amp; society</span>
-        <span class="date">2026-03-14</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-13/2026-03-13.html">
-        <span class="title-text">El gimnasio del barrio</span>
-        <span class="tag">Health &amp; sports</span>
-        <span class="date">2026-03-13</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-12/2026-03-12.html">
-        <span class="title-text">La búsqueda de empleo</span>
-        <span class="tag">Work &amp; school</span>
-        <span class="date">2026-03-12</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-10/2026-03-10.html">
-        <span class="title-text">Una reserva de hotel inesperada</span>
-        <span class="tag">Travel &amp; tourism</span>
-        <span class="date">2026-03-10</span>
-      </a>
-    </li>
-    <li>
-      <a href="passages/2026-03-10/2026-03-10.html">
-        <span class="title-text">Una mudanza complicada</span>
-        <span class="tag">Daily life</span>
-        <span class="date">2026-03-10</span>
-      </a>
-    </li>
-  </ul>
+  <!-- View toggle -->
+  <div class="view-toggle">
+    <button class="view-btn active" data-view="date">📅 日付順</button>
+    <button class="view-btn" data-view="month">📆 月別</button>
+    <button class="view-btn" data-view="theme">🏷 テーマ別</button>
+  </div>
+
+  <!-- Theme filter pills (日付順 only) -->
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-pill active" data-filter="all">すべて</button>
+    <button class="filter-pill" data-filter="Daily life">Daily life</button>
+    <button class="filter-pill" data-filter="Travel &amp; tourism">Travel &amp; tourism</button>
+    <button class="filter-pill" data-filter="Work &amp; school">Work &amp; school</button>
+    <button class="filter-pill" data-filter="Health &amp; sports">Health &amp; sports</button>
+    <button class="filter-pill" data-filter="Culture &amp; society">Culture &amp; society</button>
+    <button class="filter-pill" data-filter="Media &amp; entertainment">Media &amp; entertainment</button>
+    <button class="filter-pill" data-filter="Relationships">Relationships</button>
+  </div>
+
+  <!-- Flat list (日付順) -->
+  <div id="dateView">
+    <ul class="list" id="mainList">
+      <li data-date="2026-04-07" data-category="Media &amp; entertainment">
+        <a href="passages/2026-04-07/2026-04-07.html">
+          <span class="title-text">Las noticias de cada noche</span>
+          <span class="tag">Media &amp; entertainment</span>
+          <span class="date">2026-04-07</span>
+        </a>
+      </li>
+      <li data-date="2026-04-06" data-category="Relationships">
+        <a href="passages/2026-04-06/2026-04-06.html">
+          <span class="title-text">La primera cita</span>
+          <span class="tag">Relationships</span>
+          <span class="date">2026-04-06</span>
+        </a>
+      </li>
+      <li data-date="2026-04-05" data-category="Health &amp; sports">
+        <a href="passages/2026-04-05/2026-04-05.html">
+          <span class="title-text">Las clases de natación</span>
+          <span class="tag">Health &amp; sports</span>
+          <span class="date">2026-04-05</span>
+        </a>
+      </li>
+      <li data-date="2026-04-04" data-category="Travel &amp; tourism">
+        <a href="passages/2026-04-04/2026-04-04.html">
+          <span class="title-text">Una excursión a las pirámides</span>
+          <span class="tag">Travel &amp; tourism</span>
+          <span class="date">2026-04-04</span>
+        </a>
+      </li>
+      <li data-date="2026-04-03" data-category="Work &amp; school">
+        <a href="passages/2026-04-03/2026-04-03.html">
+          <span class="title-text">La práctica profesional</span>
+          <span class="tag">Work &amp; school</span>
+          <span class="date">2026-04-03</span>
+        </a>
+      </li>
+      <li data-date="2026-04-02" data-category="Daily life">
+        <a href="passages/2026-04-02/2026-04-02.html">
+          <span class="title-text">El metro en hora pico</span>
+          <span class="tag">Daily life</span>
+          <span class="date">2026-04-02</span>
+        </a>
+      </li>
+      <li data-date="2026-04-01" data-category="Work &amp; school">
+        <a href="passages/2026-04-01/2026-04-01.html">
+          <span class="title-text">La beca de intercambio</span>
+          <span class="tag">Work &amp; school</span>
+          <span class="date">2026-04-01</span>
+        </a>
+      </li>
+      <li data-date="2026-03-31" data-category="Daily life">
+        <a href="passages/2026-03-31/2026-03-31.html">
+          <span class="title-text">El vecino del quinto piso</span>
+          <span class="tag">Daily life</span>
+          <span class="date">2026-03-31</span>
+        </a>
+      </li>
+      <li data-date="2026-03-30" data-category="Media &amp; entertainment">
+        <a href="passages/2026-03-30/2026-03-30.html">
+          <span class="title-text">La primera presentación en vivo</span>
+          <span class="tag">Media &amp; entertainment</span>
+          <span class="date">2026-03-30</span>
+        </a>
+      </li>
+      <li data-date="2026-03-29" data-category="Culture &amp; society">
+        <a href="passages/2026-03-29/2026-03-29.html">
+          <span class="title-text">Cuidar el medio ambiente desde casa</span>
+          <span class="tag">Culture &amp; society</span>
+          <span class="date">2026-03-29</span>
+        </a>
+      </li>
+      <li data-date="2026-03-28" data-category="Relationships">
+        <a href="passages/2026-03-28/2026-03-28.html">
+          <span class="title-text">Una amistad que sobrevivió la distancia</span>
+          <span class="tag">Relationships</span>
+          <span class="date">2026-03-28</span>
+        </a>
+      </li>
+      <li data-date="2026-03-27" data-category="Health &amp; sports">
+        <a href="passages/2026-03-27/2026-03-27.html">
+          <span class="title-text">La cita con el médico</span>
+          <span class="tag">Health &amp; sports</span>
+          <span class="date">2026-03-27</span>
+        </a>
+      </li>
+      <li data-date="2026-03-26" data-category="Travel &amp; tourism">
+        <a href="passages/2026-03-26/2026-03-26.html">
+          <span class="title-text">¿Por dónde queda el museo?</span>
+          <span class="tag">Travel &amp; tourism</span>
+          <span class="date">2026-03-26</span>
+        </a>
+      </li>
+      <li data-date="2026-03-25" data-category="Daily life">
+        <a href="passages/2026-03-25/2026-03-25.html">
+          <span class="title-text">Una tarde en la cocina</span>
+          <span class="tag">Daily life</span>
+          <span class="date">2026-03-25</span>
+        </a>
+      </li>
+      <li data-date="2026-03-24" data-category="Work &amp; school">
+        <a href="passages/2026-03-24/2026-03-24.html">
+          <span class="title-text">El nuevo compañero de trabajo</span>
+          <span class="tag">Work &amp; school</span>
+          <span class="date">2026-03-24</span>
+        </a>
+      </li>
+      <li data-date="2026-03-23" data-category="Media &amp; entertainment">
+        <a href="passages/2026-03-23/2026-03-23.html">
+          <span class="title-text">La última función</span>
+          <span class="tag">Media &amp; entertainment</span>
+          <span class="date">2026-03-23</span>
+        </a>
+      </li>
+      <li data-date="2026-03-22" data-category="Culture &amp; society">
+        <a href="passages/2026-03-22/2026-03-22.html">
+          <span class="title-text">La red del vecindario</span>
+          <span class="tag">Culture &amp; society</span>
+          <span class="date">2026-03-22</span>
+        </a>
+      </li>
+      <li data-date="2026-03-21" data-category="Relationships">
+        <a href="passages/2026-03-21/2026-03-21.html">
+          <span class="title-text">La visita de los abuelos</span>
+          <span class="tag">Relationships</span>
+          <span class="date">2026-03-21</span>
+        </a>
+      </li>
+      <li data-date="2026-03-20" data-category="Health &amp; sports">
+        <a href="passages/2026-03-20/2026-03-20.html">
+          <span class="title-text">El reto de comer sano</span>
+          <span class="tag">Health &amp; sports</span>
+          <span class="date">2026-03-20</span>
+        </a>
+      </li>
+      <li data-date="2026-03-19" data-category="Work &amp; school">
+        <a href="passages/2026-03-19/2026-03-19.html">
+          <span class="title-text">La feria de ciencias</span>
+          <span class="tag">Work &amp; school</span>
+          <span class="date">2026-03-19</span>
+        </a>
+      </li>
+      <li data-date="2026-03-18" data-category="Travel &amp; tourism">
+        <a href="passages/2026-03-18/2026-03-18.html">
+          <span class="title-text">Un viaje inesperado por carretera</span>
+          <span class="tag">Travel &amp; tourism</span>
+          <span class="date">2026-03-18</span>
+        </a>
+      </li>
+      <li data-date="2026-03-17" data-category="Daily life">
+        <a href="passages/2026-03-17/2026-03-17.html">
+          <span class="title-text">Un sábado en el mercado</span>
+          <span class="tag">Daily life</span>
+          <span class="date">2026-03-17</span>
+        </a>
+      </li>
+      <li data-date="2026-03-16" data-category="Media &amp; entertainment">
+        <a href="passages/2026-03-16/2026-03-16.html">
+          <span class="title-text">Un video que se hizo viral</span>
+          <span class="tag">Media &amp; entertainment</span>
+          <span class="date">2026-03-16</span>
+        </a>
+      </li>
+      <li data-date="2026-03-15" data-category="Relationships">
+        <a href="passages/2026-03-15/2026-03-15.html">
+          <span class="title-text">Mi compañera de cuarto</span>
+          <span class="tag">Relationships</span>
+          <span class="date">2026-03-15</span>
+        </a>
+      </li>
+      <li data-date="2026-03-14" data-category="Culture &amp; society">
+        <a href="passages/2026-03-14/2026-03-14.html">
+          <span class="title-text">La feria del pueblo</span>
+          <span class="tag">Culture &amp; society</span>
+          <span class="date">2026-03-14</span>
+        </a>
+      </li>
+      <li data-date="2026-03-13" data-category="Health &amp; sports">
+        <a href="passages/2026-03-13/2026-03-13.html">
+          <span class="title-text">El gimnasio del barrio</span>
+          <span class="tag">Health &amp; sports</span>
+          <span class="date">2026-03-13</span>
+        </a>
+      </li>
+      <li data-date="2026-03-12" data-category="Work &amp; school">
+        <a href="passages/2026-03-12/2026-03-12.html">
+          <span class="title-text">La búsqueda de empleo</span>
+          <span class="tag">Work &amp; school</span>
+          <span class="date">2026-03-12</span>
+        </a>
+      </li>
+      <li data-date="2026-03-10" data-category="Travel &amp; tourism">
+        <a href="passages/2026-03-10/2026-03-10.html">
+          <span class="title-text">Una reserva de hotel inesperada</span>
+          <span class="tag">Travel &amp; tourism</span>
+          <span class="date">2026-03-10</span>
+        </a>
+      </li>
+      <li data-date="2026-03-10" data-category="Daily life">
+        <a href="passages/2026-03-10/2026-03-10.html">
+          <span class="title-text">Una mudanza complicada</span>
+          <span class="tag">Daily life</span>
+          <span class="date">2026-03-10</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Grouped views (月別 / テーマ別) -->
+  <div id="groupView" style="display:none"></div>
+
+  <script>
+    // ---- Data: read from the flat list ----
+    const items = Array.from(document.querySelectorAll('#mainList li')).map(li => ({
+      date: li.dataset.date,
+      month: li.dataset.date.slice(0, 7),
+      category: li.dataset.category.replace(/&amp;/g, '&'),
+      href: li.querySelector('a').href,
+      title: li.querySelector('.title-text').textContent,
+      tag: li.querySelector('.tag').textContent,
+    }));
+
+    // ---- Month label helper ----
+    const MONTH_LABELS = {
+      '01': '1月', '02': '2月', '03': '3月', '04': '4月',
+      '05': '5月', '06': '6月', '07': '7月', '08': '8月',
+      '09': '9月', '10': '10月', '11': '11月', '12': '12月',
+    };
+    function monthLabel(ym) {
+      const [y, m] = ym.split('-');
+      return `${y}年 ${MONTH_LABELS[m]}`;
+    }
+
+    // ---- Category order ----
+    const CATEGORY_ORDER = [
+      'Daily life', 'Travel & tourism', 'Work & school',
+      'Health & sports', 'Culture & society', 'Media & entertainment', 'Relationships'
+    ];
+
+    // ---- Build grouped HTML ----
+    function buildGroups(groupKey, labelFn, orderFn) {
+      const map = new Map();
+      items.forEach(item => {
+        const key = item[groupKey];
+        if (!map.has(key)) map.set(key, []);
+        map.get(key).push(item);
+      });
+
+      const keys = orderFn([...map.keys()]);
+      return keys.map(key => {
+        const entries = map.get(key);
+        const rows = entries.map(item => `
+          <li>
+            <a href="${item.href}">
+              <span class="title-text">${item.title}</span>
+              ${groupKey === 'month'
+                ? `<span class="tag">${item.tag}</span>`
+                : `<span class="date">${item.date}</span>`}
+            </a>
+          </li>`).join('');
+        return `
+          <div class="group-section">
+            <div class="group-heading" onclick="toggleGroup(this)">
+              ${labelFn(key)}
+              <span class="group-count">${entries.length}件</span>
+              <span class="group-arrow">▼</span>
+            </div>
+            <ul class="group-list">${rows}</ul>
+          </div>`;
+      }).join('');
+    }
+
+    function toggleGroup(heading) {
+      const list = heading.nextElementSibling;
+      const arrow = heading.querySelector('.group-arrow');
+      list.classList.toggle('collapsed');
+      arrow.classList.toggle('collapsed');
+    }
+
+    // ---- State ----
+    let currentView = 'date';
+    let currentFilter = 'all';
+
+    // ---- Render ----
+    function render() {
+      const dateView = document.getElementById('dateView');
+      const groupView = document.getElementById('groupView');
+      const filterBar = document.getElementById('filterBar');
+
+      if (currentView === 'date') {
+        dateView.style.display = '';
+        groupView.style.display = 'none';
+        filterBar.style.display = '';
+
+        document.querySelectorAll('#mainList li').forEach(li => {
+          const cat = li.dataset.category.replace(/&amp;/g, '&');
+          li.classList.toggle('hidden', currentFilter !== 'all' && cat !== currentFilter);
+        });
+
+      } else if (currentView === 'month') {
+        dateView.style.display = 'none';
+        groupView.style.display = '';
+        filterBar.style.display = 'none';
+        groupView.innerHTML = buildGroups(
+          'month',
+          monthLabel,
+          keys => keys.sort((a, b) => b.localeCompare(a))
+        );
+
+      } else if (currentView === 'theme') {
+        dateView.style.display = 'none';
+        groupView.style.display = '';
+        filterBar.style.display = 'none';
+        groupView.innerHTML = buildGroups(
+          'category',
+          k => k,
+          keys => CATEGORY_ORDER.filter(c => keys.includes(c))
+        );
+      }
+    }
+
+    // ---- View toggle ----
+    document.querySelectorAll('.view-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentView = btn.dataset.view;
+        render();
+      });
+    });
+
+    // ---- Filter pills ----
+    document.querySelectorAll('.filter-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentFilter = pill.dataset.filter;
+        render();
+      });
+    });
+
+    render();
+  </script>
 </body>
 </html>
