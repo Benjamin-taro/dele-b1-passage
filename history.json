@@ -182,6 +182,13 @@
       "subtopic": "First date",
       "title": "La primera cita",
       "vocab": ["animarse", "armarse de valor", "salida", "de inmediato", "tenso", "fluir", "en común", "padrísimo", "dar buena espina", "darse cuenta"]
+    },
+    {
+      "date": "2026-04-07",
+      "category": "Media & entertainment",
+      "subtopic": "News",
+      "title": "Las noticias de cada noche",
+      "vocab": ["noticiero", "encender", "estar al tanto", "reportaje", "informado", "actualidad", "punto de vista", "formarse una opinión", "titular", "clave"]
     }
   ]
 }
