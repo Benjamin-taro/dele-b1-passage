@@ -459,11 +459,20 @@
       return `${y}年 ${MONTH_LABELS[m]}`;
     }
 
-    // ---- Category order ----
+    // ---- Category order + icons ----
     const CATEGORY_ORDER = [
       'Daily life', 'Travel & tourism', 'Work & school',
       'Health & sports', 'Culture & society', 'Media & entertainment', 'Relationships'
     ];
+    const CATEGORY_ICONS = {
+      'Daily life':            '🏠',
+      'Travel & tourism':      '✈️',
+      'Work & school':         '💼',
+      'Health & sports':       '🏃',
+      'Culture & society':     '🌍',
+      'Media & entertainment': '🎬',
+      'Relationships':         '💬',
+    };
 
     // ---- Build grouped HTML ----
     function buildGroups(groupKey, labelFn, orderFn) {
@@ -491,9 +500,9 @@
             <div class="group-heading" onclick="toggleGroup(this)">
               ${labelFn(key)}
               <span class="group-count">${entries.length}件</span>
-              <span class="group-arrow">▼</span>
+              <span class="group-arrow collapsed">▼</span>
             </div>
-            <ul class="group-list">${rows}</ul>
+            <ul class="group-list collapsed">${rows}</ul>
           </div>`;
       }).join('');
     }
@@ -541,7 +550,7 @@
         filterBar.style.display = 'none';
         groupView.innerHTML = buildGroups(
           'category',
-          k => k,
+          k => `${CATEGORY_ICONS[k] ?? ''} ${k}`,
           keys => CATEGORY_ORDER.filter(c => keys.includes(c))
         );
       }
