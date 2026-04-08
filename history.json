@@ -189,6 +189,13 @@
       "subtopic": "News",
       "title": "Las noticias de cada noche",
       "vocab": ["noticiero", "encender", "estar al tanto", "reportaje", "informado", "actualidad", "punto de vista", "formarse una opinión", "titular", "clave"]
+    },
+    {
+      "date": "2026-04-08",
+      "category": "Culture & society",
+      "subtopic": "Traditions",
+      "title": "La tradición de las posadas",
+      "vocab": ["posada", "farol", "villancico", "pedir posada", "piñata", "vendado", "ponche", "tejocote", "buñuelo", "temporada"]
     }
   ]
 }
