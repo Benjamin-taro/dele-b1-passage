@@ -125,11 +125,11 @@ In the HTML output, Part 1 and Part 2 must be rendered **side by side** using a 
 
 **Text-to-Speech (TTS) button — required in every HTML output:**
 
-The Spanish passage container (`<div class="passage-box">`) must have `id="spanish-text"`. Immediately before the `<div class="passage-columns">` block, insert a TTS button. At the end of the file, just before `</body>`, include the following script (using ResponsiveVoice.js for reliable Spanish pronunciation):
+The Spanish passage container (`<div class="passage-box">`) must have `id="spanish-text"`. Immediately before the `<div class="passage-columns">` block, insert a TTS button. At the end of the file, just before `</body>`, include the following script (using Web Speech API):
 
 ```html
   <div style="margin-bottom: 16px;">
-    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+    <button id="tts-btn" onclick="toggleSpeak()" style="margin: 12px 0; padding: 8px 16px; background: #b8860b; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 15px;">🔊 スペイン語を読み上げ</button>
   </div>
   <div class="passage-columns">
     <div>
@@ -139,28 +139,29 @@ The Spanish passage container (`<div class="passage-box">`) must have `id="spani
 ```
 
 ```html
-<script src="https://code.responsivevoice.org/responsivevoice.js?key=FREE"></script>
 <script>
 function toggleSpeak() {
-  const btn = document.getElementById('tts-btn');
-  if (responsiveVoice.isPlaying()) {
-    responsiveVoice.cancel();
+  var btn = document.getElementById('tts-btn');
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
     btn.textContent = '🔊 スペイン語を読み上げ';
     return;
   }
-  const paras = Array.from(document.querySelectorAll('#spanish-text p'));
-  const text = paras.map(p => p.textContent.trim()).filter(t => t.length > 0).join(' ');
+  var paras = Array.from(document.querySelectorAll('#spanish-text p'));
+  var text = paras.map(function(p){ return p.textContent.trim(); }).filter(function(t){ return t.length > 0; }).join(' ');
+  var utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = function() { btn.textContent = '🔊 スペイン語を読み上げ'; };
+  utterance.onerror = function() { btn.textContent = '🔊 スペイン語を読み上げ'; };
   btn.textContent = '⏹ 停止';
-  responsiveVoice.speak(text, 'Spanish Female', {
-    rate: 0.9,
-    onend: function() { btn.textContent = '🔊 スペイン語を読み上げ'; }
-  });
+  window.speechSynthesis.speak(utterance);
 }
 </script>
 </body>
 ```
 
-The button toggles between `🔊 スペイン語を読み上げ` and `⏹ 停止` while speaking. Uses ResponsiveVoice.js with `'Spanish Female'` voice and rate `0.9`.
+The button toggles between `🔊 スペイン語を読み上げ` and `⏹ 停止` while speaking. Uses Web Speech API with `lang='es-ES'` and rate `0.85`.
 
 ```
 🇬🇧 English Translation
