@@ -201,7 +201,8 @@ function toggleSpeak() {
     document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
     return;
   }
-  const text = document.getElementById('spanish-text').textContent;
+  const paras = Array.from(document.querySelectorAll('#spanish-text p'));
+  const text = paras.map(p => p.textContent.trim()).join(' ');
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'es-ES';
   utterance.rate = 0.85;
