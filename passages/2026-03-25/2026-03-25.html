@@ -85,7 +85,7 @@
   <span class="tag">Daily life — Cooking</span>
   <h1>📖 Una tarde en la cocina</h1>
 
-  <div class="passage-box">
+  <div class="passage-box" id="spanish-text">
     <p>Cuando Sofía llegó de trabajar, encontró a su mamá preparando la cena. Ese día no había mucho tiempo, así que decidieron cocinar juntas algo sencillo pero rico: sopa de fideos con pollo.</p>
     <p>Primero, su mamá le explicó cómo dorar los fideos en un poco de aceite hasta que quedaran bien tostados. Sofía nunca había hecho eso antes y se sorprendió al ver cómo el color cambiaba tan rápido. Luego, agregaron caldo de pollo, jitomate licuado y un poco de epazote para darle sabor.</p>
     <p>Mientras la sopa se cocía, Sofía picó cebolla y chile para la salsa. Sus ojos lloraban tanto que tuvo que salir un momento al patio. Su mamá se rió y le dijo que con la práctica uno se acostumbra.</p>
@@ -223,5 +223,22 @@
     <p><strong>3. b)</strong> — 「empezó a cocinar al menos dos veces por semana」と本文の最後に明記されている。毎日作った（c）や料理教室（a）という情報は本文にない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

@@ -104,10 +104,14 @@
   <span class="tag">Media &amp; entertainment — News</span>
   <h1>📖 Las noticias de cada noche</h1>
 
+
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
   <div class="passage-columns">
     <div>
       <div class="passage-col-label">🇪🇸 Español</div>
-      <div class="passage-box">
+      <div class="passage-box" id="spanish-text">
         <p>Valeria siempre pensó que las noticias eran aburridas. Cuando llegaba a casa después del trabajo, prefería ver series en su celular antes de encender el televisor para ver el noticiero. Sin embargo, todo cambió cuando su jefa le pidió que siguiera la actualidad para estar al tanto de lo que pasaba en el país.</p>
         <p>Al principio, Valeria sintió que era una obligación más. Pero después de una semana, empezó a notar que los temas la interesaban de verdad. Un reportaje sobre la contaminación del agua en algunas colonias de Monterrey le pareció especialmente importante. Habló del tema con sus vecinos y se dio cuenta de que casi nadie estaba bien informado.</p>
         <p>Desde entonces, Valeria ve el noticiero todas las noches y también lee artículos en línea. Le gusta comparar diferentes puntos de vista antes de formarse una opinión. A veces comenta los titulares con sus compañeros de trabajo durante el descanso.</p>
@@ -246,5 +250,22 @@
     <p><strong>3. b)</strong> — 第3段落に「Le gusta comparar diferentes puntos de vista antes de formarse una opinión」とある。上司と話す（a）や一つのメディアだけを読む（c）とは書かれていない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

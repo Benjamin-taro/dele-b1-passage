@@ -104,10 +104,14 @@
   <span class="tag">Culture &amp; society — Environmental issues</span>
   <h1>📖 Cuidar el medio ambiente desde casa</h1>
 
+
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
   <div class="passage-columns">
     <div>
       <div class="passage-col-label">🇪🇸 Español</div>
-      <div class="passage-box">
+      <div class="passage-box" id="spanish-text">
         <p>En la colonia donde vive Fernanda, la situación con la basura se había vuelto un problema serio. Había bolsas tiradas en las banquetas y los contenedores siempre estaban llenos. Un grupo de vecinos decidió que era momento de actuar.</p>
         <p>Organizaron una campaña de concientización en el parque del barrio. Repartieron folletos explicando cómo separar los residuos en casa: papel, vidrio, plástico y desechos orgánicos. También colocaron contenedores de colores en puntos estratégicos de la colonia.</p>
         <p>Al principio, no todos participaron. Algunos decían que reciclar tomaba demasiado tiempo o que no veían la diferencia. Pero poco a poco, más familias empezaron a sumarse al esfuerzo.</p>
@@ -248,5 +252,22 @@
     <p><strong>3. c)</strong> — 「la colonia lucía más limpia y los vecinos tenían mayor conciencia sobre el medio ambiente」と本文の最後に直接書かれている。リサイクル施設（a）や受賞（b）は本文に登場しない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

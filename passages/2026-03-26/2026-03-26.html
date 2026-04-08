@@ -85,7 +85,7 @@
   <span class="tag">Travel &amp; tourism — Asking for directions</span>
   <h1>📖 ¿Por dónde queda el museo?</h1>
 
-  <div class="passage-box">
+  <div class="passage-box" id="spanish-text">
     <p>Lucía llegó en camión a una colonia que no conocía bien. Necesitaba llegar al Museo de Arte Moderno, pero no traía su celular con la batería suficiente para usar el mapa. Decidió preguntar a la primera persona que vio en la banqueta.</p>
     <p>—Perdón, ¿me podría decir cómo llegar al Museo de Arte Moderno? —preguntó con un poco de pena.</p>
     <p>El señor le explicó con paciencia: —Siga derecho por esta calle hasta llegar al cruce con la Avenida Insurgentes. Ahí doble a la derecha y camine unas tres cuadras. En la esquina donde hay una farmacia, doble a la izquierda. El museo queda en esa misma calle, no tiene pérdida.</p>
@@ -225,5 +225,22 @@
     <p><strong>3. b)</strong> — 「llevaría el celular bien cargado, o al menos un mapa impreso」と本文の最後に書かれている。a）やc）という記述は本文にない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

@@ -104,10 +104,14 @@
   <span class="tag">Work &amp; school — University</span>
   <h1>📖 La beca de intercambio</h1>
 
+
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
   <div class="passage-columns">
     <div>
       <div class="passage-col-label">🇪🇸 Español</div>
-      <div class="passage-box">
+      <div class="passage-box" id="spanish-text">
         <p>Daniela llevaba meses preparando los documentos para solicitar una beca de intercambio. Tenía que reunir cartas de recomendación, su historial académico y un ensayo en el que explicara por qué quería estudiar en el extranjero.</p>
         <p>Un martes por la tarde recibió un correo con el asunto: "Resultado de tu solicitud". Lo abrió con el corazón acelerado. Había quedado seleccionada. Iba a pasar un semestre en una universidad de Colombia.</p>
         <p>Lo primero que hizo fue llamar a su mamá. Su reacción fue mezcla de alegría y preocupación: se alegraba por ella, pero le daba miedo que su hija estuviera tan lejos. Su papá, en cambio, le dijo que aprovechara la oportunidad al máximo.</p>
@@ -248,5 +252,22 @@
     <p><strong>3. b)</strong> — 「pensó en todo lo que iba a echar de menos」と同時に「estaba lista para adaptarse a algo nuevo」とある。後悔（c）や純粋な興奮だけ（a）という記述はない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

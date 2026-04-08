@@ -85,7 +85,7 @@
   <span class="tag">Relationships — Family</span>
   <h1>📖 La visita de los abuelos</h1>
 
-  <div class="passage-box">
+  <div class="passage-box" id="spanish-text">
     <p>Cuando los abuelos de Valeria anunciaron que vendrían a visitarla por una semana, toda la familia empezó a prepararse con mucha emoción. Valeria y su mamá limpiaron la casa, compraron comida especial y arreglaron el cuarto de invitados para que estuviera cómodo.</p>
     <p>Sus abuelos vivían en Guadalajara y no los veía desde la Navidad anterior. Por eso, cuando llegaron a la Ciudad de México, Valeria corrió a abrazarlos. Su abuela traía tamales y pan de yema que había preparado especialmente para ellos. El olor llenó toda la casa al instante.</p>
     <p>Durante la semana, salieron a recorrer la ciudad. Visitaron el centro histórico, comieron en un restaurante de comida típica y fueron al teatro una tarde. El abuelo de Valeria siempre contaba historias graciosas sobre cuando era joven, y todos terminaban riéndose a carcajadas.</p>
@@ -221,5 +221,22 @@
     <p><strong>3. b)</strong> — 最後の文に「esos momentos en familia eran los que más recordaría」と書かれており、家族との時間が大切だという気持ちが明確に表現されている。引っ越し（a）や訪問の長さ（c）については言及されていない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

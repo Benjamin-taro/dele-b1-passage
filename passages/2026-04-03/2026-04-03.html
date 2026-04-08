@@ -104,10 +104,14 @@
   <span class="tag">Work &amp; school — Internship</span>
   <h1>📖 La práctica profesional</h1>
 
+
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
   <div class="passage-columns">
     <div>
       <div class="passage-col-label">🇪🇸 Español</div>
-      <div class="passage-box">
+      <div class="passage-box" id="spanish-text">
         <p>Laura tiene 22 años y está en el último año de su carrera de administración en la Universidad Nacional Autónoma de México. Este semestre consiguió una práctica profesional en una empresa de mercadotecnia ubicada en la colonia Polanco, en la Ciudad de México.</p>
         <p>Al principio, Laura se sentía nerviosa porque no sabía qué esperar. Su supervisora, la licenciada Ramírez, le explicó sus responsabilidades desde el primer día: organizar juntas, preparar presentaciones y apoyar al equipo en investigaciones de mercado. Aunque algunas actividades le parecían difíciles, aprendía algo nuevo cada semana.</p>
         <p>Lo que más le gustaba era participar en las reuniones con los clientes. Ahí escuchaba cómo los profesionales resolvían problemas y tomaban decisiones importantes. Su compañero de área, Rodrigo, siempre le daba consejos útiles cuando ella tenía dudas sobre algún proyecto.</p>
@@ -248,5 +252,22 @@
     <p><strong>3. b)</strong> — 「la empresa le ofreció continuar trabajando medio tiempo mientras terminaba sus estudios」とある。卒業後のフルタイム（a）や奨学金（c）については記述がない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

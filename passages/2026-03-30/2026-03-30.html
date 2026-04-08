@@ -104,10 +104,14 @@
   <span class="tag">Media &amp; entertainment — Music</span>
   <h1>📖 La primera presentación en vivo</h1>
 
+
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
   <div class="passage-columns">
     <div>
       <div class="passage-col-label">🇪🇸 Español</div>
-      <div class="passage-box">
+      <div class="passage-box" id="spanish-text">
         <p>Desde pequeña, Valeria había tomado clases de guitarra en su colonia. Su maestra siempre le decía que tenía talento, pero Valeria nunca se había atrevido a tocar frente a otras personas.</p>
         <p>Un día, el café de la esquina organizó una noche de música en vivo para artistas locales. La dueña del lugar invitó a Valeria a participar, pero ella dudó mucho antes de aceptar.</p>
         <p>Pasó dos semanas ensayando las mismas tres canciones. Practicaba en su cuarto con la puerta cerrada para que nadie la escuchara. La noche anterior al evento, casi se echó para atrás, pero su amiga Sofía la convenció de que fuera.</p>
@@ -248,5 +252,22 @@
     <p><strong>3. c)</strong> — 「quería volver a subir al escenario」と本文の最後に明記されている。安堵（a）や失望（b）とは逆の内容である。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

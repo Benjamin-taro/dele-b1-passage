@@ -85,7 +85,7 @@
   <span class="tag">Work &amp; school — Workplace relationships</span>
   <h1>📖 El nuevo compañero de trabajo</h1>
 
-  <div class="passage-box">
+  <div class="passage-box" id="spanish-text">
     <p>Cuando Andrés llegó a trabajar el lunes por la mañana, encontró a alguien nuevo sentado en el escritorio de al lado. Era Valeria, una diseñadora que acababa de incorporarse al equipo. Andrés, que llevaba tres años en la empresa, quiso hacerla sentir bienvenida desde el principio.</p>
     <p>Le explicó cómo funcionaba la oficina: dónde estaba la copiadora, a qué hora solían reunirse para comer y cuáles eran las reglas no escritas del equipo. Valeria escuchaba con atención y tomaba notas en su cuaderno.</p>
     <p>A mediodía, Andrés la invitó a comer con el resto del equipo en una taquería que quedaba a dos cuadras de la oficina. Al principio, Valeria estaba un poco callada, pero poco a poco fue soltándose. Contó que venía de Guadalajara y que estaba buscando departamento en la ciudad.</p>
@@ -221,5 +221,22 @@
     <p><strong>3. b)</strong> — 「cuando llegó a la empresa, también había tenido dificultades al principio, y que alguien le había echado la mano. Ahora le tocaba hacer lo mismo」とある。チームリーダー（a）という記述はなく、バレリアが自分から助けを求めた（c）という描写もない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

@@ -85,7 +85,7 @@
   <span class="tag">Work &amp; school — School events</span>
   <h1>📖 La feria de ciencias</h1>
 
-  <div class="passage-box">
+  <div class="passage-box" id="spanish-text">
     <p>Cada año, la primaria Benito Juárez organiza una feria de ciencias para que los alumnos presenten sus proyectos frente a toda la comunidad escolar. Maestros, papás y estudiantes esperan este evento con mucho entusiasmo porque es una oportunidad para aprender cosas nuevas y compartir ideas.</p>
     <p>Este año, Valentina y su equipo decidieron investigar si la música afecta el crecimiento de las plantas. Durante semanas, regaron dos grupos de plantas: uno en silencio y otro con música clásica. Anotaron los cambios en una libreta y tomaron fotos cada tercer día para tener evidencia clara de sus observaciones.</p>
     <p>Cuando llegó el día de la feria, el salón de actos estaba lleno de visitantes. Los participantes explicaban sus proyectos a los papás y a los maestros, que hacían preguntas con mucho interés. El proyecto de Valentina llamó la atención de todos porque los resultados eran sorprendentes: las plantas que escucharon música crecieron casi el doble que las otras.</p>
@@ -221,5 +221,22 @@
     <p><strong>3. c)</strong> — 「El equipo de Valentina obtuvo el primer lugar y recibió un diploma」と本文にそのまま書かれているため。2位（b）や無賞（a）は本文と一致しない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

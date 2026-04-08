@@ -104,10 +104,14 @@
   <span class="tag">Daily life — Neighbors</span>
   <h1>📖 El vecino del quinto piso</h1>
 
+
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
   <div class="passage-columns">
     <div>
       <div class="passage-col-label">🇪🇸 Español</div>
-      <div class="passage-box">
+      <div class="passage-box" id="spanish-text">
         <p>Cuando Ernesto llegó a vivir al edificio, nadie lo saludó. Simplemente se mudó un martes por la mañana mientras los demás vecinos salían a trabajar. Solo Claudia, que trabajaba desde casa, notó que alguien había llegado al quinto piso.</p>
         <p>Durante la primera semana, Claudia escuchó música suave a través de la pared y el olor a café recién hecho por las mañanas. Sentía curiosidad, pero no quería parecer entrometida.</p>
         <p>Un jueves, el elevador se descompuso y los dos se encontraron en la escalera. Ernesto cargaba unas cajas pesadas y a Claudia se le cayó el paraguas. Él lo recogió sin decir nada y ella le dio las gracias. Fue un encuentro breve, pero suficiente.</p>
@@ -248,5 +252,22 @@
     <p><strong>3. b)</strong> — 「bastó un elevador roto para romper el hielo」が最後のまとめ。壊れたエレベーターという些細な出来事が友情の始まりになったことを表している。デザインの共同作業（a）や修理による変化（c）は述べられていない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

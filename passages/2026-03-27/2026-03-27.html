@@ -85,7 +85,7 @@
   <span class="tag">Health &amp; sports — Doctor visit</span>
   <h1>📖 La cita con el médico</h1>
 
-  <div class="passage-box">
+  <div class="passage-box" id="spanish-text">
     <p>Desde hacía dos días, Ramón se sentía mal. Tenía fiebre, le dolía la garganta y estaba muy cansado. Su mamá le insistió en que fuera al médico antes de que empeorara.</p>
     <p>Por la mañana, Ramón llamó al consultorio y pidió una cita para ese mismo día. La recepcionista le dijo que había un lugar disponible a las once.</p>
     <p>Cuando llegó, el médico le tomó la temperatura y le revisó la garganta. Le preguntó desde cuándo tenía esos síntomas y si había tomado algún medicamento. Ramón le explicó que solo había tomado un analgésico la noche anterior.</p>
@@ -223,5 +223,22 @@
     <p><strong>3. b)</strong> — 「guardar reposo por dos días, tomar mucha agua y evitar alimentos muy fríos」と本文に直接書かれている。運動（a）や翌日の再診（c）は本文にない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

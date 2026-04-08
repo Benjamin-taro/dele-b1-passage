@@ -85,7 +85,7 @@
   <span class="tag">Media &amp; entertainment — Movies</span>
   <h1>📖 La última función</h1>
 
-  <div class="passage-box">
+  <div class="passage-box" id="spanish-text">
     <p>Sofía y su amiga Lucía decidieron ir al cine el viernes por la noche. Hacía semanas que querían ver la nueva película de un director que les gustaba mucho. Compraron sus entradas en línea para no hacer fila en la taquilla y llegaron justo a tiempo para encontrar buenas butacas.</p>
     <p>La película era una historia sobre una joven que dejaba su ciudad natal para buscar nuevas oportunidades. Las imágenes eran muy cuidadas y la banda sonora acompañaba perfectamente cada escena. Sofía, que también había pensado en mudarse a otra ciudad algún día, sintió que la historia le hablaba directamente.</p>
     <p>Al salir, las dos amigas se quedaron un buen rato conversando en la banqueta. Lucía pensaba que el final había sido demasiado abierto, pero Sofía lo defendía: para ella, dejar preguntas sin respuesta era lo más honesto que podía hacer un director.</p>
@@ -221,5 +221,22 @@
     <p><strong>3. b)</strong> — Lucíaは「el final había sido demasiado abierto」と感じ、Sofíaはそれを「lo más honesto」と擁護した。音楽（a）や監督の好み（c）については意見の相違が書かれていない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

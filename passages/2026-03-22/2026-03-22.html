@@ -85,7 +85,7 @@
   <span class="tag">Culture &amp; society — Technology</span>
   <h1>📖 La red del vecindario</h1>
 
-  <div class="passage-box">
+  <div class="passage-box" id="spanish-text">
     <p>Rodrigo vivía en un departamento en Monterrey y casi no conocía a sus vecinos. Un día, su amigo le habló de una aplicación para celular que conectaba a los residentes de un mismo edificio o colonia. Rodrigo la descargó sin muchas expectativas.</p>
     <p>Al principio solo revisaba los mensajes de vez en cuando. Pero pronto descubrió que la app era muy útil: los vecinos avisaban cuando encontraban llaves perdidas, ofrecían cosas que ya no necesitaban o pedían ayuda para resolver problemas del edificio. Incluso organizaban eventos como limpiezas comunitarias y kermeses para recaudar fondos.</p>
     <p>Lo que más le sorprendió a Rodrigo fue conocer a doña Carmen, una señora mayor que vivía en el tercer piso. Ella publicaba recetas de cocina todos los miércoles, y muchos vecinos le agradecían los consejos. Rodrigo empezó a escribirle comentarios y poco a poco se hicieron amigos.</p>
@@ -221,5 +221,22 @@
     <p><strong>3. c)</strong> — 最後の段落に「la tecnología no solo servía para entretenerse o trabajar. También podía ayudar a construir comunidad y recuperar los lazos」とあり、テクノロジーが人々の繋がりを取り戻す手段になるという点が主旨。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

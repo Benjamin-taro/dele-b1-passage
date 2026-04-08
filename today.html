@@ -104,10 +104,14 @@
   <span class="tag">Culture &amp; society — Traditions</span>
   <h1>📖 La tradición de las posadas</h1>
 
+
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
   <div class="passage-columns">
     <div>
       <div class="passage-col-label">🇪🇸 Español</div>
-      <div class="passage-box">
+      <div class="passage-box" id="spanish-text">
         <p>Las posadas son una de las tradiciones más queridas de México. Se celebran del 16 al 24 de diciembre y representan la búsqueda de José y María de un lugar donde quedarse antes del nacimiento de Jesús. Cada noche, los vecinos de una colonia se reúnen en una casa diferente para celebrar.</p>
         <p>La celebración comienza con una procesión en la que los participantes llevan faroles encendidos y cantan villancicos tradicionales. Un grupo pide posada afuera de la casa mientras otro grupo responde desde adentro. Después de que les abren la puerta, todos entran juntos para rezar y disfrutar de la fiesta.</p>
         <p>La parte favorita de los niños es la piñata. La piñata tradicional tiene siete picos que representan los siete pecados capitales. Los niños se turnan para golpearla con los ojos vendados mientras los demás cantan. Cuando se rompe, todos corren a recoger los dulces y las frutas que caen.</p>
@@ -246,5 +250,22 @@
     <p><strong>3. b)</strong> — 第4段落に「una bebida caliente hecha con frutas de temporada como el tejocote y la guayaba」とある。カカオやシナモン（a）、トウモロコシや黒砂糖（c）は記述がない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

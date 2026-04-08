@@ -85,7 +85,7 @@
   <span class="tag">Relationships — Friendships</span>
   <h1>📖 Una amistad que sobrevivió la distancia</h1>
 
-  <div class="passage-box">
+  <div class="passage-box" id="spanish-text">
     <p>Adriana y Claudia se conocieron en la secundaria y desde entonces se llevaban muy bien. Compartían los mismos gustos, se apoyaban en los momentos difíciles y se contaban todo sin miedo a juzgarse.</p>
     <p>Cuando Adriana se mudó a Monterrey por trabajo, las dos pensaron que la distancia afectaría su amistad. Al principio se llamaban seguido, pero con el tiempo las llamadas se fueron espaciando. Hubo incluso un malentendido: Claudia sintió que Adriana ya no tenía tiempo para ella, y Adriana pensó que Claudia estaba molesta por algo que no le quería decir.</p>
     <p>Un día, Claudia le mandó un mensaje largo explicando cómo se sentía. Adriana le respondió de inmediato y se disculpó por no haber estado más presente. Esa conversación fue el punto de partida para reconectar.</p>
@@ -223,5 +223,22 @@
     <p><strong>3. c)</strong> — 最後の段落に「la amistad verdadera no depende de la distancia, sino de la voluntad de mantener el vínculo」とある。a）やb）とは正反対の内容が書かれている。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

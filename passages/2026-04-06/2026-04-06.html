@@ -104,10 +104,14 @@
   <span class="tag">Relationships — First date</span>
   <h1>📖 La primera cita</h1>
 
+
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
   <div class="passage-columns">
     <div>
       <div class="passage-col-label">🇪🇸 Español</div>
-      <div class="passage-box">
+      <div class="passage-box" id="spanish-text">
         <p>Ana y Mateo se conocieron en el trabajo, donde los dos eran diseñadores en la misma empresa. Durante semanas se mandaron mensajes y platicaron durante el almuerzo, pero ninguno de los dos se animó a proponer una salida formal.</p>
         <p>Fue Mateo quien finalmente se armó de valor. Una tarde, después de una junta larga, le preguntó a Ana si quería ir a cenar el fin de semana. Ella aceptó de inmediato, aunque por dentro estaba nerviosa.</p>
         <p>El sábado por la noche, se encontraron en un restaurante en la Roma Norte. Al principio los dos estaban un poco tensos, pero después del primer plato la conversación comenzó a fluir sola. Hablaron de sus familias, de sus viajes y de sus películas favoritas. Se dieron cuenta de que tenían muchas cosas en común.</p>
@@ -248,5 +252,22 @@
     <p><strong>3. b)</strong> — 「Le dijo que había pasado una noche padrísima y que le daba buena espina」とある。つまらなかった（a）や共通点がない（c）とは書かれていない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

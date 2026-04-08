@@ -123,6 +123,43 @@ A natural English translation of the full passage body.
 
 In the HTML output, Part 1 and Part 2 must be rendered **side by side** using a two-column flexbox layout (`.passage-columns`). The Spanish passage goes in the left column and the English translation in the right column. On mobile (max-width: 700px), they stack vertically. Do NOT use a separate `<h2>` heading for the English section — instead use a small label (`<div class="passage-col-label">`) above each column.
 
+**Text-to-Speech (TTS) button — required in every HTML output:**
+
+The Spanish passage container (`<div class="passage-box">`) must have `id="spanish-text"`. Immediately before the `<div class="passage-columns">` block, insert a TTS button. At the end of the file, just before `</body>`, include the following script:
+
+```html
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
+  <div class="passage-columns">
+    <div>
+      <div class="passage-col-label">🇪🇸 Español</div>
+      <div class="passage-box" id="spanish-text">
+        ...
+```
+
+```html
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
+</body>
+```
+
+The button toggles between `🔊 スペイン語を読み上げ` and `⏹ 停止` while speaking. Language is `es-ES`, rate is `0.85`.
+
 ```
 🇬🇧 English Translation
 
@@ -172,7 +209,10 @@ Each option must include its English and Japanese translation on the same line, 
 ## Execution Steps
 
 1. **Determine the target date**: Use the date argument if provided (YYYY-MM-DD format). Otherwise, use today's date from the `currentDate` context variable or system clock. All subsequent file paths, commit messages, and HTML titles must use this date.
-1. Read `history.json` (treat as empty if it does not exist)
+2. **Check for existing output**: If `passages/YYYY-MM-DD/YYYY-MM-DD.md` already exists, stop immediately and output:
+   `⚠️ passages/YYYY-MM-DD/ already exists. To regenerate, delete the folder first.`
+   Do NOT proceed further.
+3. Read `history.json` (treat as empty if it does not exist)
 2. Refer to the history and select a non-overlapping theme category and subtopic
 3. Generate a B1-level passage on that theme
 4. Write a natural English translation of the passage

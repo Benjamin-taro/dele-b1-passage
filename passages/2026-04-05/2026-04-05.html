@@ -104,10 +104,14 @@
   <span class="tag">Health &amp; sports — Swimming lessons</span>
   <h1>📖 Las clases de natación</h1>
 
+
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
   <div class="passage-columns">
     <div>
       <div class="passage-col-label">🇪🇸 Español</div>
-      <div class="passage-box">
+      <div class="passage-box" id="spanish-text">
         <p>Rodrigo tenía treinta años y nunca había aprendido a nadar. Cada verano, cuando iba a la playa con su familia, se quedaba en la orilla mientras todos los demás disfrutaban del agua. Un día decidió que era hora de cambiar eso.</p>
         <p>Se inscribió en un curso para adultos principiantes en la alberca del deportivo de su colonia. La maestra, quien tenía mucha experiencia con adultos que le tenían miedo al agua, le explicó que lo más importante era aprender a respirar correctamente y a flotar sin moverse.</p>
         <p>Las primeras dos clases fueron difíciles. Rodrigo se ponía nervioso cada vez que metía la cara al agua y no podía relajarse. Pero la maestra le sugirió que practicara la respiración fuera de la alberca antes de intentarlo de nuevo.</p>
@@ -248,5 +252,22 @@
     <p><strong>3. b)</strong> — 「Rodrigo llamó a su familia para contarles la noticia」とある。上級コース（a）や海での練習（c）については記述がない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

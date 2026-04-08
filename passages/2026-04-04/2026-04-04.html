@@ -104,10 +104,14 @@
   <span class="tag">Travel &amp; tourism — Day trip</span>
   <h1>📖 Una excursión a las pirámides</h1>
 
+
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
   <div class="passage-columns">
     <div>
       <div class="passage-col-label">🇪🇸 Español</div>
-      <div class="passage-box">
+      <div class="passage-box" id="spanish-text">
         <p>Sofía había vivido toda su vida en la Ciudad de México, pero nunca había visitado las pirámides de Teotihuacán. Un fin de semana, su amiga Daniela la convenció de ir.</p>
         <p>Salieron muy temprano, a las seis de la mañana, para evitar el tráfico y llegar antes de que el sol se pusiera muy fuerte. El camión las dejó en la entrada de la zona arqueológica, donde compraron sus boletos y contrataron los servicios de un guía turístico.</p>
         <p>El guía les explicó la historia del lugar mientras caminaban por la Calzada de los Muertos. Sofía escuchaba con mucha atención y hacía preguntas sobre los antiguos habitantes que construyeron aquellas pirámides enormes. Cuando llegaron a la base de la Pirámide del Sol, Daniela quería subir hasta la cima, pero Sofía dudó un momento porque los escalones eran muy empinados.</p>
@@ -248,5 +252,22 @@
     <p><strong>3. b)</strong> — 「la próxima vez irían a Oaxaca para conocer las ruinas de Monte Albán」とある。翌週末の再訪（a）や同じガイドの再起用（c）については記述がない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

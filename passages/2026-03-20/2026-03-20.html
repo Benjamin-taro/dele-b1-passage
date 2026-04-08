@@ -85,7 +85,7 @@
   <span class="tag">Health &amp; sports — Diet</span>
   <h1>📖 El reto de comer sano</h1>
 
-  <div class="passage-box">
+  <div class="passage-box" id="spanish-text">
     <p>Sofía siempre llegaba a casa muy cansada después del trabajo y le resultaba difícil preparar comidas saludables. La mayoría de las veces pedía comida a domicilio o compraba algo rápido en la tienda de la esquina. Sin embargo, después de una visita al médico, decidió cambiar sus hábitos alimenticios.</p>
     <p>El doctor le explicó que su dieta necesitaba más verduras, frutas y proteínas, y menos grasas y azúcar. También le recomendó planear sus comidas con anticipación para no caer en la tentación de comer lo primero que encontrara. Sofía empezó a ir al mercado los fines de semana para comprar ingredientes frescos y económicos.</p>
     <p>Al principio, cocinar todos los días le parecía complicado, pero poco a poco fue aprendiendo recetas sencillas. Descubrió que preparar un caldo de pollo con verduras o un guisado de lentejas no tomaba mucho tiempo y era mucho más barato que pedir comida a domicilio. Además, comenzó a sentirse con más energía durante el día.</p>
@@ -221,5 +221,22 @@
     <p><strong>3. b)</strong> — 最後の文に「el mayor reto no había sido cocinar, sino organizarse mejor」と明示されているため。料理を覚えること（a）は難しくなかったと書かれており、外食をやめた（c）わけでもない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

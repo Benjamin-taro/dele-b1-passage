@@ -104,10 +104,14 @@
   <span class="tag">Daily life — Public transport</span>
   <h1>📖 El metro en hora pico</h1>
 
+
+  <div style="margin-bottom: 16px;">
+    <button id="tts-btn" onclick="toggleSpeak()" style="background:#d4a96a;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-size:1rem;cursor:pointer;font-family:sans-serif;">🔊 スペイン語を読み上げ</button>
+  </div>
   <div class="passage-columns">
     <div>
       <div class="passage-col-label">🇪🇸 Español</div>
-      <div class="passage-box">
+      <div class="passage-box" id="spanish-text">
         <p>Marco vivía en el norte de la ciudad y trabajaba en el centro. Cada mañana tomaba el metro para llegar a tiempo a su oficina. Aunque el trayecto no era muy largo, a las ocho de la mañana los vagones siempre iban abarrotados de gente.</p>
         <p>Un miércoles, el tren se detuvo entre dos estaciones sin ningún aviso. El conductor anunció por el altavoz que había una falla técnica en la vía y que los pasajeros tendrían que esperar. Todos soltaron un suspiro de resignación.</p>
         <p>Marco revisó su teléfono: ya eran las ocho y cuarto y tenía una reunión a las nueve. Intentó llamar a su jefa para avisarle del retraso, pero la señal era muy mala dentro del túnel. Solo pudo enviarle un mensaje corto antes de que la pantalla se quedara sin batería.</p>
@@ -248,5 +252,22 @@
     <p><strong>3. b)</strong> — 「decidió salir media hora antes cada mañana para evitar el caos de la hora pico」とある。地下鉄をやめる（a）や責任者に話す（c）とは書かれていない。</p>
   </div>
 
+
+<script>
+function toggleSpeak() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+    document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+    return;
+  }
+  const text = document.getElementById('spanish-text').textContent;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'es-ES';
+  utterance.rate = 0.85;
+  utterance.onend = () => document.getElementById('tts-btn').textContent = '🔊 スペイン語を読み上げ';
+  document.getElementById('tts-btn').textContent = '⏹ 停止';
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>
