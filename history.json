@@ -203,6 +203,13 @@
       "subtopic": "Shopping",
       "title": "Las rebajas del fin de semana",
       "vocab": ["rebajas", "agotarse", "aparador", "prenda", "etiqueta", "probador", "en efectivo", "bolsa", "presumir", "aprovechar"]
+    },
+    {
+      "date": "2026-04-10",
+      "category": "Work & school",
+      "subtopic": "Remote work",
+      "title": "El trabajo desde casa",
+      "vocab": ["home office", "modalidad", "concentrarse", "distracción", "horario", "videoconferencia", "flexibilidad", "presencial", "traslado", "a distancia"]
     }
   ]
 }
