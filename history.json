@@ -210,6 +210,13 @@
       "subtopic": "Remote work",
       "title": "El trabajo desde casa",
       "vocab": ["home office", "modalidad", "concentrarse", "distracción", "horario", "videoconferencia", "flexibilidad", "presencial", "traslado", "a distancia"]
+    },
+    {
+      "date": "2026-04-11",
+      "category": "Travel & tourism",
+      "subtopic": "Train trip",
+      "title": "El tren de las seis de la mañana",
+      "vocab": ["equipaje", "madrugada", "boleto", "ventanilla", "andén", "vagón", "recorrido", "revisor", "pasajero", "destino"]
     }
   ]
 }
