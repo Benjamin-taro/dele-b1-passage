@@ -273,6 +273,13 @@
       "subtopic": "Weekend trip to Oaxaca",
       "title": "El viaje a Oaxaca",
       "vocab": ["terminal", "tlayuda", "artesanías", "barro negro", "regatear", "tejidos", "zapotecos", "panorámica", "disfrutar", "de recuerdo"]
+    },
+    {
+      "date": "2026-04-20",
+      "category": "Health & sports",
+      "subtopic": "Cycling",
+      "title": "La ciclovía del barrio",
+      "vocab": ["ciclovía", "pedalear", "casco", "rodilleras", "caída", "subida", "agotado", "sudoroso", "resistencia", "calidad de vida"]
     }
   ]
 }
