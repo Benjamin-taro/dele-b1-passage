@@ -308,6 +308,13 @@
       "subtopic": "Getting a haircut",
       "title": "Una nueva imagen",
       "vocab": ["peluquería", "peluquera", "bata", "puntas", "flequillo", "lacio", "tijeras", "capas", "reflejos", "teñirse"]
+    },
+    {
+      "date": "2026-04-25",
+      "category": "Travel & tourism",
+      "subtopic": "Beach trip",
+      "title": "El fin de semana en la costa",
+      "vocab": ["arena", "sombrilla", "bronceador", "chapotear", "palapa", "mariscos", "marea", "horizonte", "atardecer", "quemarse"]
     }
   ]
 }
