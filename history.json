@@ -315,6 +315,13 @@
       "subtopic": "Beach trip",
       "title": "El fin de semana en la costa",
       "vocab": ["arena", "sombrilla", "bronceador", "chapotear", "palapa", "mariscos", "marea", "horizonte", "atardecer", "quemarse"]
+    },
+    {
+      "date": "2026-04-26",
+      "category": "Work & school",
+      "subtopic": "Study group",
+      "title": "El grupo de estudio",
+      "vocab": ["repasar", "apuntes", "subrayar", "aclarar", "duda", "resumen", "comprometerse", "rendimiento", "calificación", "reprobar"]
     }
   ]
 }
