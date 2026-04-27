@@ -322,6 +322,13 @@
       "subtopic": "Study group",
       "title": "El grupo de estudio",
       "vocab": ["repasar", "apuntes", "subrayar", "aclarar", "duda", "resumen", "comprometerse", "rendimiento", "calificación", "reprobar"]
+    },
+    {
+      "date": "2026-04-27",
+      "category": "Culture & society",
+      "subtopic": "Community garden",
+      "title": "El huerto de todos",
+      "vocab": ["convocatoria", "huerto", "parcela", "sembrar", "abono", "jornada", "maleza", "brote", "cosecha", "semilla"]
     }
   ]
 }
