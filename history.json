@@ -329,6 +329,13 @@
       "subtopic": "Community garden",
       "title": "El huerto de todos",
       "vocab": ["convocatoria", "huerto", "parcela", "sembrar", "abono", "jornada", "maleza", "brote", "cosecha", "semilla"]
+    },
+    {
+      "date": "2026-04-28",
+      "category": "Health & sports",
+      "subtopic": "Hiking",
+      "title": "La caminata al Ajusco",
+      "vocab": ["senderismo", "amanecer", "sendero", "mochila", "tramo", "altitud", "mareo", "cumbre", "niebla", "esfuerzo", "botas"]
     }
   ]
 }
