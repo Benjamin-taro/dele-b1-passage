@@ -357,6 +357,13 @@
       "subtopic": "Quinceañera",
       "title": "Los quince años de Camila",
       "vocab": ["bordados", "vals", "chambelanes", "coreografía", "invitados", "brindis", "discurso", "emotivo", "madrina", "tiara"]
+    },
+    {
+      "date": "2026-05-02",
+      "category": "Daily life",
+      "subtopic": "Pharmacy visit",
+      "title": "Una visita a la farmacia",
+      "vocab": ["malestar", "farmacéutico", "jarabe", "pastillas", "alérgico", "genérico", "principio activo", "dosis", "advertir", "marca"]
     }
   ]
 }
