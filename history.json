@@ -5,365 +5,954 @@
       "category": "Daily life",
       "subtopic": "Moving house",
       "title": "Una mudanza complicada",
-      "vocab": ["mudanza", "acogedor", "disponible", "a última hora", "averiado", "escaleras", "inconvenientes", "agotador", "merecer la pena", "darse cuenta de"]
+      "vocab": [
+        "mudanza",
+        "acogedor",
+        "disponible",
+        "a última hora",
+        "averiado",
+        "escaleras",
+        "inconvenientes",
+        "agotador",
+        "merecer la pena",
+        "darse cuenta de"
+      ]
     },
     {
       "date": "2026-03-10",
       "category": "Travel & tourism",
       "subtopic": "Hotel bookings",
       "title": "Una reserva de hotel inesperada",
-      "vocab": ["reserva", "recepcionista", "habitación doble", "ilusión", "al parecer", "ahorrar", "solución", "vistas", "compensación", "estancia"]
+      "vocab": [
+        "reserva",
+        "recepcionista",
+        "habitación doble",
+        "ilusión",
+        "al parecer",
+        "ahorrar",
+        "solución",
+        "vistas",
+        "compensación",
+        "estancia"
+      ]
     },
     {
       "date": "2026-03-12",
       "category": "Work & school",
       "subtopic": "Job hunting",
       "title": "La búsqueda de empleo",
-      "vocab": ["currículum", "carta de presentación", "solicitud", "destacar", "entrevista de trabajo", "ensayar", "entrevistador", "candidato", "puesto", "dar frutos"]
+      "vocab": [
+        "currículum",
+        "carta de presentación",
+        "solicitud",
+        "destacar",
+        "entrevista de trabajo",
+        "ensayar",
+        "entrevistador",
+        "candidato",
+        "puesto",
+        "dar frutos"
+      ]
     },
     {
       "date": "2026-03-13",
       "category": "Health & sports",
       "subtopic": "Exercise habits",
       "title": "El gimnasio del barrio",
-      "vocab": ["sedentario", "echarse", "se la pasaba", "agotarse", "cuadra", "platicar", "armarle una rutina", "alimentación", "comida chatarra", "ánimo"]
+      "vocab": [
+        "sedentario",
+        "echarse",
+        "se la pasaba",
+        "agotarse",
+        "cuadra",
+        "platicar",
+        "armarle una rutina",
+        "alimentación",
+        "comida chatarra",
+        "ánimo"
+      ]
     },
     {
       "date": "2026-03-14",
       "category": "Culture & society",
       "subtopic": "Festivals",
       "title": "La feria del pueblo",
-      "vocab": ["feria", "explanada", "antojitos", "hacerse agua la boca", "convivir", "adultos mayores", "chicos", "municipio", "artesano", "fuegos artificiales"]
+      "vocab": [
+        "feria",
+        "explanada",
+        "antojitos",
+        "hacerse agua la boca",
+        "convivir",
+        "adultos mayores",
+        "chicos",
+        "municipio",
+        "artesano",
+        "fuegos artificiales"
+      ]
     },
     {
       "date": "2026-03-15",
       "category": "Relationships",
       "subtopic": "Life with a roommate",
       "title": "Mi compañera de cuarto",
-      "vocab": ["rentar", "convivencia", "madrugada", "ponerse de acuerdo", "tareas del hogar", "repartir", "avisar", "sin darse cuenta", "volverse", "tolerante"]
+      "vocab": [
+        "rentar",
+        "convivencia",
+        "madrugada",
+        "ponerse de acuerdo",
+        "tareas del hogar",
+        "repartir",
+        "avisar",
+        "sin darse cuenta",
+        "volverse",
+        "tolerante"
+      ]
     },
     {
       "date": "2026-03-16",
       "category": "Media & entertainment",
       "subtopic": "Social media",
       "title": "Un video que se hizo viral",
-      "vocab": ["redes sociales", "seguidores", "reproducciones", "repostear", "sin parar", "patrocinar", "medios de comunicación", "contenido", "auténtico", "presumir"]
-    }
-  ,
+      "vocab": [
+        "redes sociales",
+        "seguidores",
+        "reproducciones",
+        "repostear",
+        "sin parar",
+        "patrocinar",
+        "medios de comunicación",
+        "contenido",
+        "auténtico",
+        "presumir"
+      ]
+    },
     {
       "date": "2026-03-17",
       "category": "Daily life",
       "subtopic": "Shopping at the market",
       "title": "Un sábado en el mercado",
-      "vocab": ["puesto", "jitomate", "canasta", "especias", "hierbas de olor", "epazote", "amargo", "platillo", "billete", "sobrar"]
+      "vocab": [
+        "puesto",
+        "jitomate",
+        "canasta",
+        "especias",
+        "hierbas de olor",
+        "epazote",
+        "amargo",
+        "platillo",
+        "billete",
+        "sobrar"
+      ]
     },
     {
       "date": "2026-03-18",
       "category": "Travel & tourism",
       "subtopic": "Travel mishaps",
       "title": "Un viaje inesperado por carretera",
-      "vocab": ["con destino a", "a mitad del camino", "cargador", "desviación", "carretera", "ponerse nervioso", "gasolinera", "indicaciones", "señalando", "prometió"]
+      "vocab": [
+        "con destino a",
+        "a mitad del camino",
+        "cargador",
+        "desviación",
+        "carretera",
+        "ponerse nervioso",
+        "gasolinera",
+        "indicaciones",
+        "señalando",
+        "prometió"
+      ]
     },
     {
       "date": "2026-03-19",
       "category": "Work & school",
       "subtopic": "School events",
       "title": "La feria de ciencias",
-      "vocab": ["comunidad escolar", "entusiasmo", "regar", "anotar", "evidencia", "salón de actos", "sorprendente", "jurado", "diploma", "ambicioso"]
+      "vocab": [
+        "comunidad escolar",
+        "entusiasmo",
+        "regar",
+        "anotar",
+        "evidencia",
+        "salón de actos",
+        "sorprendente",
+        "jurado",
+        "diploma",
+        "ambicioso"
+      ]
     },
     {
       "date": "2026-03-20",
       "category": "Health & sports",
       "subtopic": "Diet",
       "title": "El reto de comer sano",
-      "vocab": ["hábitos alimenticios", "proteínas", "anticipación", "tentación", "ingredientes", "económico", "caldo", "guisado", "equilibrado", "organizarse"]
+      "vocab": [
+        "hábitos alimenticios",
+        "proteínas",
+        "anticipación",
+        "tentación",
+        "ingredientes",
+        "económico",
+        "caldo",
+        "guisado",
+        "equilibrado",
+        "organizarse"
+      ]
     },
     {
       "date": "2026-03-21",
       "category": "Relationships",
       "subtopic": "Family",
       "title": "La visita de los abuelos",
-      "vocab": ["emoción", "cuarto de invitados", "tamal", "pan de yema", "recorrer", "centro histórico", "comida típica", "graciosas", "a carcajadas", "despedirse"]
+      "vocab": [
+        "emoción",
+        "cuarto de invitados",
+        "tamal",
+        "pan de yema",
+        "recorrer",
+        "centro histórico",
+        "comida típica",
+        "graciosas",
+        "a carcajadas",
+        "despedirse"
+      ]
     },
     {
       "date": "2026-03-22",
       "category": "Culture & society",
       "subtopic": "Technology",
       "title": "La red del vecindario",
-      "vocab": ["departamento", "colonia", "descargar", "expectativas", "de vez en cuando", "kermés", "recaudar fondos", "publicar", "entretenerse", "recuperar los lazos"]
+      "vocab": [
+        "departamento",
+        "colonia",
+        "descargar",
+        "expectativas",
+        "de vez en cuando",
+        "kermés",
+        "recaudar fondos",
+        "publicar",
+        "entretenerse",
+        "recuperar los lazos"
+      ]
     },
     {
       "date": "2026-03-23",
       "category": "Media & entertainment",
       "subtopic": "Movies",
       "title": "La última función",
-      "vocab": ["taquilla", "butaca", "ciudad natal", "banda sonora", "escena", "banqueta", "final abierto", "reseña", "crítico", "protagonista"]
+      "vocab": [
+        "taquilla",
+        "butaca",
+        "ciudad natal",
+        "banda sonora",
+        "escena",
+        "banqueta",
+        "final abierto",
+        "reseña",
+        "crítico",
+        "protagonista"
+      ]
     },
     {
       "date": "2026-03-24",
       "category": "Work & school",
       "subtopic": "Workplace relationships",
       "title": "El nuevo compañero de trabajo",
-      "vocab": ["incorporarse", "escritorio", "copiadora", "reglas no escritas", "taquería", "cuadra", "soltarse", "echar la mano", "agradecer", "tocarle a alguien"]
+      "vocab": [
+        "incorporarse",
+        "escritorio",
+        "copiadora",
+        "reglas no escritas",
+        "taquería",
+        "cuadra",
+        "soltarse",
+        "echar la mano",
+        "agradecer",
+        "tocarle a alguien"
+      ]
     },
     {
       "date": "2026-03-25",
       "category": "Daily life",
       "subtopic": "Cooking",
       "title": "Una tarde en la cocina",
-      "vocab": ["fideos", "dorar", "tostado", "caldo", "licuado", "cocerse", "picar", "patio", "acostumbrarse", "poner la mesa"]
+      "vocab": [
+        "fideos",
+        "dorar",
+        "tostado",
+        "caldo",
+        "licuado",
+        "cocerse",
+        "picar",
+        "patio",
+        "acostumbrarse",
+        "poner la mesa"
+      ]
     },
     {
       "date": "2026-03-26",
       "category": "Travel & tourism",
       "subtopic": "Asking for directions",
       "title": "¿Por dónde queda el museo?",
-      "vocab": ["camión", "cruce", "doblar", "esquina", "no tiene pérdida", "instrucciones", "letrero", "alivio", "cargado", "impreso"]
+      "vocab": [
+        "camión",
+        "cruce",
+        "doblar",
+        "esquina",
+        "no tiene pérdida",
+        "instrucciones",
+        "letrero",
+        "alivio",
+        "cargado",
+        "impreso"
+      ]
     },
     {
       "date": "2026-03-27",
       "category": "Health & sports",
       "subtopic": "Doctor visit",
       "title": "La cita con el médico",
-      "vocab": ["cita", "consultorio", "fiebre", "síntoma", "analgésico", "infección", "recetar", "antibióticos", "reposo", "receta"]
+      "vocab": [
+        "cita",
+        "consultorio",
+        "fiebre",
+        "síntoma",
+        "analgésico",
+        "infección",
+        "recetar",
+        "antibióticos",
+        "reposo",
+        "receta"
+      ]
     },
     {
       "date": "2026-03-28",
       "category": "Relationships",
       "subtopic": "Friendships",
       "title": "Una amistad que sobrevivió la distancia",
-      "vocab": ["llevarse bien", "apoyarse", "espaciarse", "malentendido", "disculparse", "punto de partida", "reconectar", "extrañar", "amistad", "vínculo"]
+      "vocab": [
+        "llevarse bien",
+        "apoyarse",
+        "espaciarse",
+        "malentendido",
+        "disculparse",
+        "punto de partida",
+        "reconectar",
+        "extrañar",
+        "amistad",
+        "vínculo"
+      ]
     },
     {
       "date": "2026-03-29",
       "category": "Culture & society",
       "subtopic": "Environmental issues",
       "title": "Cuidar el medio ambiente desde casa",
-      "vocab": ["basura", "contenedor", "campaña", "concientización", "residuos", "separar", "plástico", "sumarse", "contaminación", "conciencia"]
+      "vocab": [
+        "basura",
+        "contenedor",
+        "campaña",
+        "concientización",
+        "residuos",
+        "separar",
+        "plástico",
+        "sumarse",
+        "contaminación",
+        "conciencia"
+      ]
     },
     {
       "date": "2026-03-30",
       "category": "Media & entertainment",
       "subtopic": "Music",
       "title": "La primera presentación en vivo",
-      "vocab": ["atreverse", "en vivo", "dudar", "ensayar", "echarse para atrás", "convencer", "latir", "nervios", "aplaudir", "escenario"]
+      "vocab": [
+        "atreverse",
+        "en vivo",
+        "dudar",
+        "ensayar",
+        "echarse para atrás",
+        "convencer",
+        "latir",
+        "nervios",
+        "aplaudir",
+        "escenario"
+      ]
     },
     {
       "date": "2026-04-02",
       "category": "Daily life",
       "subtopic": "Public transport",
       "title": "El metro en hora pico",
-      "vocab": ["trayecto", "abarrotado", "aviso", "altavoz", "falla técnica", "resignación", "retraso", "señal", "arrancar", "hora pico"]
+      "vocab": [
+        "trayecto",
+        "abarrotado",
+        "aviso",
+        "altavoz",
+        "falla técnica",
+        "resignación",
+        "retraso",
+        "señal",
+        "arrancar",
+        "hora pico"
+      ]
     },
     {
       "date": "2026-04-03",
       "category": "Work & school",
       "subtopic": "Internship",
       "title": "La práctica profesional",
-      "vocab": ["práctica profesional", "mercadotecnia", "junta", "aportación", "medio tiempo", "proponer", "investigación de mercado", "valioso", "supervisora", "graduarse"]
+      "vocab": [
+        "práctica profesional",
+        "mercadotecnia",
+        "junta",
+        "aportación",
+        "medio tiempo",
+        "proponer",
+        "investigación de mercado",
+        "valioso",
+        "supervisora",
+        "graduarse"
+      ]
     },
     {
       "date": "2026-04-04",
       "category": "Travel & tourism",
       "subtopic": "Day trip / Sightseeing",
       "title": "Una excursión a las pirámides",
-      "vocab": ["zona arqueológica", "guía turístico", "cima", "empinado", "paisaje", "quedarse sin palabras", "convencer", "antiguos habitantes", "ruinas", "impresionante"]
+      "vocab": [
+        "zona arqueológica",
+        "guía turístico",
+        "cima",
+        "empinado",
+        "paisaje",
+        "quedarse sin palabras",
+        "convencer",
+        "antiguos habitantes",
+        "ruinas",
+        "impresionante"
+      ]
     },
     {
       "date": "2026-04-05",
       "category": "Health & sports",
       "subtopic": "Swimming lessons",
       "title": "Las clases de natación",
-      "vocab": ["alberca", "principiante", "inscribirse", "deportivo", "flotar", "relajarse", "respiración", "estilo crol", "progresar", "orilla"]
+      "vocab": [
+        "alberca",
+        "principiante",
+        "inscribirse",
+        "deportivo",
+        "flotar",
+        "relajarse",
+        "respiración",
+        "estilo crol",
+        "progresar",
+        "orilla"
+      ]
     },
     {
       "date": "2026-04-06",
       "category": "Relationships",
       "subtopic": "First date",
       "title": "La primera cita",
-      "vocab": ["animarse", "armarse de valor", "salida", "de inmediato", "tenso", "fluir", "en común", "padrísimo", "dar buena espina", "darse cuenta"]
+      "vocab": [
+        "animarse",
+        "armarse de valor",
+        "salida",
+        "de inmediato",
+        "tenso",
+        "fluir",
+        "en común",
+        "padrísimo",
+        "dar buena espina",
+        "darse cuenta"
+      ]
     },
     {
       "date": "2026-04-07",
       "category": "Media & entertainment",
       "subtopic": "News",
       "title": "Las noticias de cada noche",
-      "vocab": ["noticiero", "encender", "estar al tanto", "reportaje", "informado", "actualidad", "punto de vista", "formarse una opinión", "titular", "clave"]
+      "vocab": [
+        "noticiero",
+        "encender",
+        "estar al tanto",
+        "reportaje",
+        "informado",
+        "actualidad",
+        "punto de vista",
+        "formarse una opinión",
+        "titular",
+        "clave"
+      ]
     },
     {
       "date": "2026-04-08",
       "category": "Culture & society",
       "subtopic": "Traditions",
       "title": "La tradición de las posadas",
-      "vocab": ["posada", "farol", "villancico", "pedir posada", "piñata", "vendado", "ponche", "tejocote", "buñuelo", "temporada"]
+      "vocab": [
+        "posada",
+        "farol",
+        "villancico",
+        "pedir posada",
+        "piñata",
+        "vendado",
+        "ponche",
+        "tejocote",
+        "buñuelo",
+        "temporada"
+      ]
     },
     {
       "date": "2026-04-09",
       "category": "Daily life",
       "subtopic": "Shopping",
       "title": "Las rebajas del fin de semana",
-      "vocab": ["rebajas", "agotarse", "aparador", "prenda", "etiqueta", "probador", "en efectivo", "bolsa", "presumir", "aprovechar"]
+      "vocab": [
+        "rebajas",
+        "agotarse",
+        "aparador",
+        "prenda",
+        "etiqueta",
+        "probador",
+        "en efectivo",
+        "bolsa",
+        "presumir",
+        "aprovechar"
+      ]
     },
     {
       "date": "2026-04-10",
       "category": "Work & school",
       "subtopic": "Remote work",
       "title": "El trabajo desde casa",
-      "vocab": ["home office", "modalidad", "concentrarse", "distracción", "horario", "videoconferencia", "flexibilidad", "presencial", "traslado", "a distancia"]
+      "vocab": [
+        "home office",
+        "modalidad",
+        "concentrarse",
+        "distracción",
+        "horario",
+        "videoconferencia",
+        "flexibilidad",
+        "presencial",
+        "traslado",
+        "a distancia"
+      ]
     },
     {
       "date": "2026-04-11",
       "category": "Travel & tourism",
       "subtopic": "Train trip",
       "title": "El tren de las seis de la mañana",
-      "vocab": ["equipaje", "madrugada", "boleto", "ventanilla", "andén", "vagón", "recorrido", "revisor", "pasajero", "destino"]
+      "vocab": [
+        "equipaje",
+        "madrugada",
+        "boleto",
+        "ventanilla",
+        "andén",
+        "vagón",
+        "recorrido",
+        "revisor",
+        "pasajero",
+        "destino"
+      ]
     },
     {
       "date": "2026-04-12",
       "category": "Health & sports",
       "subtopic": "Running",
       "title": "El hábito de correr",
-      "vocab": ["trotar", "constancia", "calentar", "lesión", "ritmo", "hidratarse", "estado de ánimo", "carrera", "entrenamiento", "meta"]
+      "vocab": [
+        "trotar",
+        "constancia",
+        "calentar",
+        "lesión",
+        "ritmo",
+        "hidratarse",
+        "estado de ánimo",
+        "carrera",
+        "entrenamiento",
+        "meta"
+      ]
     },
     {
       "date": "2026-04-15",
       "category": "Media & entertainment",
       "subtopic": "Books",
       "title": "El libro que no pudo soltar",
-      "vocab": ["librería", "novela", "recomendación", "engancharse", "personaje", "capítulo", "marcar", "trasnocharse", "quincena", "soltar"]
+      "vocab": [
+        "librería",
+        "novela",
+        "recomendación",
+        "engancharse",
+        "personaje",
+        "capítulo",
+        "marcar",
+        "trasnocharse",
+        "quincena",
+        "soltar"
+      ]
     },
     {
       "date": "2026-04-14",
       "category": "Daily life",
       "subtopic": "Neighbors",
       "title": "Los vecinos del tercer piso",
-      "vocab": ["vecino", "pasillo", "prestado", "olla", "intercambio", "costumbre", "cerrajero", "azotea", "dispuesto", "agradable"]
+      "vocab": [
+        "vecino",
+        "pasillo",
+        "prestado",
+        "olla",
+        "intercambio",
+        "costumbre",
+        "cerrajero",
+        "azotea",
+        "dispuesto",
+        "agradable"
+      ]
     },
     {
       "date": "2026-04-13",
       "category": "Relationships",
       "subtopic": "Long-distance relationship",
       "title": "Una relación a distancia",
-      "vocab": ["mantener", "videollamada", "de por medio", "cotidiano", "de improviso", "nostalgia", "confianza", "paciencia", "valorar", "reencuentro"]
+      "vocab": [
+        "mantener",
+        "videollamada",
+        "de por medio",
+        "cotidiano",
+        "de improviso",
+        "nostalgia",
+        "confianza",
+        "paciencia",
+        "valorar",
+        "reencuentro"
+      ]
     },
     {
       "date": "2026-04-16",
       "category": "Culture & society",
       "subtopic": "Muralism / Street art",
       "title": "Los murales de la colonia",
-      "vocab": ["mural", "grafiti", "junta vecinal", "voluntario", "cempasúchil", "difuntos", "mazorca", "embellecer", "orgulloso", "águila"]
+      "vocab": [
+        "mural",
+        "grafiti",
+        "junta vecinal",
+        "voluntario",
+        "cempasúchil",
+        "difuntos",
+        "mazorca",
+        "embellecer",
+        "orgulloso",
+        "águila"
+      ]
     },
     {
       "date": "2026-04-17",
       "category": "Daily life",
       "subtopic": "Power outage",
       "title": "La noche del apagón",
-      "vocab": ["de repente", "pantalla", "vela", "alumbrar", "apagón", "frecuente", "aire acondicionado", "galletas", "incómodo", "oportunidad"]
+      "vocab": [
+        "de repente",
+        "pantalla",
+        "vela",
+        "alumbrar",
+        "apagón",
+        "frecuente",
+        "aire acondicionado",
+        "galletas",
+        "incómodo",
+        "oportunidad"
+      ]
     },
     {
       "date": "2026-04-18",
       "category": "Work & school",
       "subtopic": "First day of university",
       "title": "El primer día en la universidad",
-      "vocab": ["campus", "semestre", "aula", "puntual", "programa del curso", "lecturas obligatorias", "poco a poco", "materias", "exámenes parciales", "posibilidades"]
+      "vocab": [
+        "campus",
+        "semestre",
+        "aula",
+        "puntual",
+        "programa del curso",
+        "lecturas obligatorias",
+        "poco a poco",
+        "materias",
+        "exámenes parciales",
+        "posibilidades"
+      ]
     },
     {
       "date": "2026-04-19",
       "category": "Travel & tourism",
       "subtopic": "Weekend trip to Oaxaca",
       "title": "El viaje a Oaxaca",
-      "vocab": ["terminal", "tlayuda", "artesanías", "barro negro", "regatear", "tejidos", "zapotecos", "panorámica", "disfrutar", "de recuerdo"]
+      "vocab": [
+        "terminal",
+        "tlayuda",
+        "artesanías",
+        "barro negro",
+        "regatear",
+        "tejidos",
+        "zapotecos",
+        "panorámica",
+        "disfrutar",
+        "de recuerdo"
+      ]
     },
     {
       "date": "2026-04-20",
       "category": "Health & sports",
       "subtopic": "Cycling",
       "title": "La ciclovía del barrio",
-      "vocab": ["ciclovía", "pedalear", "casco", "rodilleras", "caída", "subida", "agotado", "sudoroso", "resistencia", "calidad de vida"]
+      "vocab": [
+        "ciclovía",
+        "pedalear",
+        "casco",
+        "rodilleras",
+        "caída",
+        "subida",
+        "agotado",
+        "sudoroso",
+        "resistencia",
+        "calidad de vida"
+      ]
     },
     {
       "date": "2026-04-21",
       "category": "Media & entertainment",
       "subtopic": "Podcasts",
       "title": "El podcast de los martes",
-      "vocab": ["auriculares", "episodio", "locutora", "carismático", "emprendimiento", "suscribirse", "pendiente", "grabación", "desconectarse", "plataforma"]
+      "vocab": [
+        "auriculares",
+        "episodio",
+        "locutora",
+        "carismático",
+        "emprendimiento",
+        "suscribirse",
+        "pendiente",
+        "grabación",
+        "desconectarse",
+        "plataforma"
+      ]
     },
     {
       "date": "2026-04-22",
       "category": "Relationships",
       "subtopic": "Siblings",
       "title": "La sorpresa de Sofía",
-      "vocab": ["fiesta sorpresa", "disimular", "arruinar", "globo", "pastel", "festejo", "sospechar", "paralizado", "susurrar", "mentira piadosa"]
+      "vocab": [
+        "fiesta sorpresa",
+        "disimular",
+        "arruinar",
+        "globo",
+        "pastel",
+        "festejo",
+        "sospechar",
+        "paralizado",
+        "susurrar",
+        "mentira piadosa"
+      ]
     },
     {
       "date": "2026-04-23",
       "category": "Culture & society",
       "subtopic": "Language exchange",
       "title": "El intercambio perfecto",
-      "vocab": ["fluidez", "acento", "pronunciar", "corregir", "modismo", "expresión coloquial", "turno", "avergonzarse", "dominar", "hablante nativo"]
+      "vocab": [
+        "fluidez",
+        "acento",
+        "pronunciar",
+        "corregir",
+        "modismo",
+        "expresión coloquial",
+        "turno",
+        "avergonzarse",
+        "dominar",
+        "hablante nativo"
+      ]
     },
     {
       "date": "2026-04-24",
       "category": "Daily life",
       "subtopic": "Getting a haircut",
       "title": "Una nueva imagen",
-      "vocab": ["peluquería", "peluquera", "bata", "puntas", "flequillo", "lacio", "tijeras", "capas", "reflejos", "teñirse"]
+      "vocab": [
+        "peluquería",
+        "peluquera",
+        "bata",
+        "puntas",
+        "flequillo",
+        "lacio",
+        "tijeras",
+        "capas",
+        "reflejos",
+        "teñirse"
+      ]
     },
     {
       "date": "2026-04-25",
       "category": "Travel & tourism",
       "subtopic": "Beach trip",
       "title": "El fin de semana en la costa",
-      "vocab": ["arena", "sombrilla", "bronceador", "chapotear", "palapa", "mariscos", "marea", "horizonte", "atardecer", "quemarse"]
+      "vocab": [
+        "arena",
+        "sombrilla",
+        "bronceador",
+        "chapotear",
+        "palapa",
+        "mariscos",
+        "marea",
+        "horizonte",
+        "atardecer",
+        "quemarse"
+      ]
     },
     {
       "date": "2026-04-26",
       "category": "Work & school",
       "subtopic": "Study group",
       "title": "El grupo de estudio",
-      "vocab": ["repasar", "apuntes", "subrayar", "aclarar", "duda", "resumen", "comprometerse", "rendimiento", "calificación", "reprobar"]
+      "vocab": [
+        "repasar",
+        "apuntes",
+        "subrayar",
+        "aclarar",
+        "duda",
+        "resumen",
+        "comprometerse",
+        "rendimiento",
+        "calificación",
+        "reprobar"
+      ]
     },
     {
       "date": "2026-04-27",
       "category": "Culture & society",
       "subtopic": "Community garden",
       "title": "El huerto de todos",
-      "vocab": ["convocatoria", "huerto", "parcela", "sembrar", "abono", "jornada", "maleza", "brote", "cosecha", "semilla"]
+      "vocab": [
+        "convocatoria",
+        "huerto",
+        "parcela",
+        "sembrar",
+        "abono",
+        "jornada",
+        "maleza",
+        "brote",
+        "cosecha",
+        "semilla"
+      ]
     },
     {
       "date": "2026-04-28",
       "category": "Health & sports",
       "subtopic": "Hiking",
       "title": "La caminata al Ajusco",
-      "vocab": ["senderismo", "amanecer", "sendero", "mochila", "tramo", "altitud", "mareo", "cumbre", "niebla", "esfuerzo", "botas"]
+      "vocab": [
+        "senderismo",
+        "amanecer",
+        "sendero",
+        "mochila",
+        "tramo",
+        "altitud",
+        "mareo",
+        "cumbre",
+        "niebla",
+        "esfuerzo",
+        "botas"
+      ]
     },
     {
       "date": "2026-04-29",
       "category": "Media & entertainment",
       "subtopic": "Streaming / TV series",
       "title": "El maratón del fin de semana",
-      "vocab": ["estreno", "trama", "intriga", "giro inesperado", "subtítulos", "doblaje", "maratón", "spoiler", "emocionante"]
+      "vocab": [
+        "estreno",
+        "trama",
+        "intriga",
+        "giro inesperado",
+        "subtítulos",
+        "doblaje",
+        "maratón",
+        "spoiler",
+        "emocionante"
+      ]
     },
     {
       "date": "2026-04-30",
       "category": "Relationships",
       "subtopic": "Meeting the partner's parents",
       "title": "La cena con los suegros",
-      "vocab": ["nerviosismo", "suegros", "formal", "portarse", "bienvenida", "derramar", "torpe", "sobremesa", "impresionar", "tranquilizarse"]
+      "vocab": [
+        "nerviosismo",
+        "suegros",
+        "formal",
+        "portarse",
+        "bienvenida",
+        "derramar",
+        "torpe",
+        "sobremesa",
+        "impresionar",
+        "tranquilizarse"
+      ]
     },
     {
       "date": "2026-05-01",
       "category": "Culture & society",
       "subtopic": "Quinceañera",
       "title": "Los quince años de Camila",
-      "vocab": ["bordados", "vals", "chambelanes", "coreografía", "invitados", "brindis", "discurso", "emotivo", "madrina", "tiara"]
+      "vocab": [
+        "bordados",
+        "vals",
+        "chambelanes",
+        "coreografía",
+        "invitados",
+        "brindis",
+        "discurso",
+        "emotivo",
+        "madrina",
+        "tiara"
+      ]
     },
     {
       "date": "2026-05-02",
       "category": "Daily life",
       "subtopic": "Pharmacy visit",
       "title": "Una visita a la farmacia",
-      "vocab": ["malestar", "farmacéutico", "jarabe", "pastillas", "alérgico", "genérico", "principio activo", "dosis", "advertir", "marca"]
+      "vocab": [
+        "malestar",
+        "farmacéutico",
+        "jarabe",
+        "pastillas",
+        "alérgico",
+        "genérico",
+        "principio activo",
+        "dosis",
+        "advertir",
+        "marca"
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "category": "Travel & tourism",
+      "subtopic": "Colonial city visit",
+      "title": "Un fin de semana en Guanajuato",
+      "vocab": [
+        "callejón",
+        "empedrado",
+        "leyenda",
+        "teleférico",
+        "mirador",
+        "mosaico",
+        "callejoneada",
+        "hospedaje",
+        "irrepetible",
+        "pintoresco"
+      ]
     }
   ]
 }
