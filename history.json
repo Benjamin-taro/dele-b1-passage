@@ -989,6 +989,24 @@
         "energía",
         "bienestar"
       ]
+    },
+    {
+      "date": "2026-05-06",
+      "category": "Media & entertainment",
+      "subtopic": "Video games",
+      "title": "El torneo de videojuegos",
+      "vocab": [
+        "torneo",
+        "local",
+        "estrategia",
+        "formar un equipo",
+        "semifinal",
+        "logro",
+        "categorías",
+        "avanzado",
+        "pérdida de tiempo",
+        "trabajo en equipo"
+      ]
     }
   ]
 }
