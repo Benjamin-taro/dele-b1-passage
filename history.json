@@ -1025,6 +1025,24 @@
         "pérdida de tiempo",
         "trabajo en equipo"
       ]
+    },
+    {
+      "date": "2026-05-08",
+      "category": "Daily life",
+      "subtopic": "Going to the bank",
+      "title": "Una mañana en el banco",
+      "vocab": [
+        "estado de cuenta",
+        "cajero",
+        "depósito",
+        "préstamo",
+        "comprobante de domicilio",
+        "recibo de sueldo",
+        "días hábiles",
+        "documentación",
+        "cajero automático",
+        "tarjeta de débito"
+      ]
     }
   ]
 }
