@@ -1043,6 +1043,24 @@
         "cajero automático",
         "tarjeta de débito"
       ]
+    },
+    {
+      "date": "2026-05-09",
+      "category": "Culture & society",
+      "subtopic": "Outdoor concert / zócalo event",
+      "title": "Un concierto en el zócalo",
+      "vocab": [
+        "zócalo",
+        "gratuito",
+        "tarima",
+        "intérprete",
+        "marimba",
+        "multitud",
+        "ovacionar",
+        "presentación",
+        "repertorio",
+        "animado"
+      ]
     }
   ]
 }
