@@ -1079,6 +1079,24 @@
         "oferta",
         "motivado"
       ]
+    },
+    {
+      "date": "2026-05-11",
+      "category": "Travel & tourism",
+      "subtopic": "Adventure tourism",
+      "title": "La tirolesa del bosque",
+      "vocab": [
+        "parque de aventura",
+        "tirolesa",
+        "arnés",
+        "vértigo",
+        "plataforma",
+        "cable",
+        "adrenalina",
+        "circuito",
+        "rapel",
+        "superar el miedo"
+      ]
     }
   ]
 }
