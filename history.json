@@ -1153,6 +1153,24 @@
         "aficionado",
         "exposición"
       ]
+    },
+    {
+      "date": "2026-05-15",
+      "category": "Daily life",
+      "subtopic": "Government errands / paperwork",
+      "title": "Los trámites del lunes",
+      "vocab": [
+        "trámite",
+        "credencial de elector",
+        "delegación",
+        "renovar",
+        "fila",
+        "banca",
+        "acta de nacimiento",
+        "funcionario",
+        "formulario",
+        "recoger"
+      ]
     }
   ]
 }
