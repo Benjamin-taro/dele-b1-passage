@@ -1225,6 +1225,24 @@
         "cronómetro",
         "trofeo"
       ]
+    },
+    {
+      "date": "2026-05-19",
+      "category": "Travel & tourism",
+      "subtopic": "Overnight bus trip",
+      "title": "El camión de medianoche",
+      "vocab": [
+        "nocturno",
+        "asiento",
+        "maleta",
+        "cobija",
+        "autopista",
+        "conductor",
+        "cruzar",
+        "litera",
+        "almohada",
+        "llegada"
+      ]
     }
   ]
 }
