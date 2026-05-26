@@ -1275,6 +1275,24 @@
         "espontáneo",
         "compartir"
       ]
+    },
+    {
+      "date": "2026-05-26",
+      "category": "Daily life",
+      "subtopic": "Car trouble / visit to the mechanic",
+      "title": "El carro en el taller",
+      "vocab": [
+        "descompuesto",
+        "llanta",
+        "frenos",
+        "presupuesto",
+        "mecánico",
+        "refacciones",
+        "revisar",
+        "grúa",
+        "garantía",
+        "reclamar"
+      ]
     }
   ]
 }
