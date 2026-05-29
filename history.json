@@ -1311,6 +1311,24 @@
         "derrota",
         "triunfo"
       ]
+    },
+    {
+      "date": "2026-05-29",
+      "category": "Travel & tourism",
+      "subtopic": "Balneario / hot springs day trip",
+      "title": "Un fin de semana en el balneario",
+      "vocab": [
+        "balneario",
+        "día de campo",
+        "chapoteadero",
+        "manantial",
+        "aguas termales",
+        "tobogán",
+        "flotador",
+        "parrilla",
+        "asolearse",
+        "hamaca"
+      ]
     }
   ]
 }
