@@ -1365,6 +1365,24 @@
         "bautizo",
         "pañal"
       ]
+    },
+    {
+      "date": "2026-06-01",
+      "category": "Media & entertainment",
+      "subtopic": "Comic books / historietas",
+      "title": "Las historietas de la abuela",
+      "vocab": [
+        "historieta",
+        "portada",
+        "viñeta",
+        "globo de texto",
+        "superhéroe",
+        "villano",
+        "dibujante",
+        "edición",
+        "coleccionista",
+        "colección"
+      ]
     }
   ]
 }
