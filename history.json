@@ -1401,6 +1401,24 @@
         "tonificar",
         "aliviar"
       ]
+    },
+    {
+      "date": "2026-06-09",
+      "category": "Daily life",
+      "subtopic": "Water leak / calling a plumber",
+      "title": "Una fuga en la cocina",
+      "vocab": [
+        "tubería",
+        "gotear",
+        "plomero",
+        "válvula",
+        "fuga",
+        "inundación",
+        "reparación",
+        "herramienta",
+        "desagüe",
+        "cotización"
+      ]
     }
   ]
 }
