@@ -5,14 +5,36 @@
       "category": "Media & entertainment",
       "subtopic": "First time at the theater",
       "title": "Una noche en el teatro",
-      "vocab": ["obra (de teatro)", "sala", "acomodador", "público", "telón", "vestuario", "maquillaje", "drama", "intervalo", "función"]
+      "vocab": [
+        "obra (de teatro)",
+        "sala",
+        "acomodador",
+        "público",
+        "telón",
+        "vestuario",
+        "maquillaje",
+        "drama",
+        "intervalo",
+        "función"
+      ]
     },
     {
       "date": "2026-05-21",
       "category": "Health & sports",
       "subtopic": "Neighborhood soccer pickup game",
       "title": "La cascarita del domingo",
-      "vocab": ["cascarita", "cancha", "portero", "empatar", "marcador", "falta", "penal", "descanso", "contrincante", "cansancio"]
+      "vocab": [
+        "cascarita",
+        "cancha",
+        "portero",
+        "empatar",
+        "marcador",
+        "falta",
+        "penal",
+        "descanso",
+        "contrincante",
+        "cansancio"
+      ]
     },
     {
       "date": "2026-05-17",
@@ -1419,7 +1441,24 @@
         "desagüe",
         "cotización"
       ]
+    },
+    {
+      "date": "2026-06-10",
+      "category": "Culture & society",
+      "subtopic": "Street food festival",
+      "title": "El festival de los sabores",
+      "vocab": [
+        "comal",
+        "carnitas",
+        "pozole",
+        "chicharrón",
+        "nopal",
+        "ahumado/a",
+        "picante",
+        "degustación",
+        "saborear",
+        "terreno"
+      ]
     }
   ]
 }
-
