@@ -1,0 +1,88 @@
+name: Daily DELE B1 Spanish passage (Claude Code)
+
+on:
+  schedule:
+    # ロンドン時間 01:00。夏時間（BST）と冬時間（GMT）の 2 本を置き、
+    # scripts/tz_gate.sh でロンドン時間 1 時にあたるほうだけを実行する
+    - cron: "0 0 * * *"
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "対象日（YYYY-MM-DD）。空ならロンドン時間の今日"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: ${{ github.repository }}-daily-passage
+  cancel-in-progress: false
+
+env:
+  TZ: Europe/London
+
+jobs:
+  passage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Time zone gate
+        id: gate
+        run: scripts/tz_gate.sh "${{ github.event.schedule }}" 1
+
+      - name: Decide date
+        id: date
+        if: steps.gate.outputs.run == 'true'
+        env:
+          INPUT_DATE: ${{ inputs.date }}
+        run: |
+          d="${INPUT_DATE:-}"
+          if [ -z "$d" ]; then d=$(date +%F); fi
+          if ! [[ "$d" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then echo "invalid date: $d" >&2; exit 1; fi
+          echo "date=$d" >> "$GITHUB_OUTPUT"
+          echo "対象日: $d"
+
+      - name: Install Claude Code
+        if: steps.gate.outputs.run == 'true'
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Generate passage
+        if: steps.gate.outputs.run == 'true'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          DATE: ${{ steps.date.outputs.date }}
+        run: |
+          claude -p "今日は ${DATE} です。.claude/skills/dele-b1-passage/SKILL.md を読み、その手順に厳密に従って ${DATE} の passage を作成してください。git は実行しないでください。終わったら作成したファイルとタイトルを短く報告してください。" \
+            --allowedTools "Read" "Write" "Edit" "Glob" "Grep" \
+            --disallowedTools "Bash" \
+            --permission-mode dontAsk
+
+      - name: Commit and push
+        id: commit
+        if: steps.gate.outputs.run == 'true'
+        env:
+          DATE: ${{ steps.date.outputs.date }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && { echo "変更なし"; exit 0; }
+          # history.json は並び順が一定でないため、対象日の entry からタイトルを取る
+          title=$(python3 -c "import json,sys; d=sys.argv[1]; es=json.load(open('history.json')).get('entries',[]); print(next((e.get('title','') for e in es if e.get('date')==d), ''))" "$DATE" 2>/dev/null || true)
+          if [ -n "$title" ]; then msg="passage: ${DATE} — ${title}"; else msg="passage: ${DATE}"; fi
+          git commit -m "$msg"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && echo "pushed=1" >> "$GITHUB_OUTPUT" && exit 0; sleep 5; done
+          exit 1
+
+      # Pages はブランチ配信（legacy）。GITHUB_TOKEN の push でもビルドされるが、念のため明示的に要求する
+      - name: Request Pages build
+        if: steps.commit.outputs.pushed == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST repos/${{ github.repository }}/pages/builds || echo "Pages build request failed (ignored)"
