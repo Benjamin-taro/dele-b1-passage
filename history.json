@@ -1749,6 +1749,24 @@
         "rato",
         "revancha"
       ]
+    },
+    {
+      "date": "2026-10-03",
+      "category": "Health & sports",
+      "subtopic": "Dentist visit",
+      "title": "Una visita al dentista",
+      "vocab": [
+        "dentista",
+        "muela",
+        "sala de espera",
+        "caries",
+        "anestesia",
+        "empaste",
+        "sarro",
+        "mejilla",
+        "cepillarse",
+        "hilo dental"
+      ]
     }
   ]
 }
