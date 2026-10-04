@@ -1767,6 +1767,24 @@
         "cepillarse",
         "hilo dental"
       ]
+    },
+    {
+      "date": "2026-10-04",
+      "category": "Travel & tourism",
+      "subtopic": "Ferry day trip to Isla Mujeres",
+      "title": "Un día en Isla Mujeres",
+      "vocab": [
+        "muelle",
+        "oleaje",
+        "transbordador",
+        "zarpar",
+        "cubierta",
+        "chaleco salvavidas",
+        "bloqueador",
+        "arrecife",
+        "tortuga",
+        "marear"
+      ]
     }
   ]
 }
