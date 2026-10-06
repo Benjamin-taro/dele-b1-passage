@@ -1803,6 +1803,29 @@
         "cariño",
         "unir"
       ]
+    },
+    {
+      "date": "2026-10-06",
+      "category": "Daily life",
+      "subtopic": "Damaged online order / refund",
+      "title": "Un paquete roto",
+      "vocab": [
+        "paquete",
+        "repartidor",
+        "pedido",
+        "envío",
+        "rastrear",
+        "dañado/a",
+        "atención al cliente",
+        "devolver"
+      ],
+      "review": [
+        "reembolso",
+        "resolver",
+        "amabilidad",
+        "enseguida"
+      ],
+      "difficulty": "same"
     }
   ]
 }
