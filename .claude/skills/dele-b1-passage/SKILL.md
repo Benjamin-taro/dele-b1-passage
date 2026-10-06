@@ -2,7 +2,7 @@
 name: dele-b1-passage
 description: >
   A skill that generates DELE B1-level Spanish short reading passages.
-  Designed for a daily morning study routine. Outputs a passage + vocabulary list + comprehension questions in one go.
+  Designed for a daily morning study routine. Outputs a passage + translation + vocabulary list in one go (no comprehension questions).
   Trigger on keywords like "DELE", "spanish passage", "morning spanish",
   "dele practice", "spanish reading", etc.
 ---
@@ -156,33 +156,7 @@ Pick out key B1 vocabulary from the passage.
 | ...     | ...              | ...     | ...      | ...               |
 ```
 
-### Part 4: Comprehension Questions (3 questions)
-
-Multiple-choice questions modeled after the DELE B1 reading section.
-
-Each option must include its English and Japanese translation on the same line, in parentheses.
-
-```
-❓ Comprensión lectora
-
-1. [Question (in Spanish)]
-   a) ... (English / 日本語)
-   b) ... (English / 日本語)
-   c) ... (English / 日本語)
-
-2. ...
-3. ...
-```
-
-### Part 5: Answers and Explanations
-
-```
-✅ Respuestas
-
-1. [Correct answer] — [Brief explanation of why (in Japanese)]
-2. ...
-3. ...
-```
+> **問題と解答は作らない。** 出力は Part 1〜3（本文・訳・語彙）だけにする。Markdown にも HTML にも、読解問題・解答・解説のセクションを入れない。
 
 ## Execution Steps
 
@@ -191,17 +165,15 @@ Each option must include its English and Japanese translation on the same line, 
    `⚠️ passages/YYYY-MM-DD/ already exists. To regenerate, delete the folder first.`
    Do NOT proceed further.
 3. Read `history.json` (treat as empty if it does not exist)
-3. Refer to the history and select a non-overlapping theme category and subtopic
-4. Generate a B1-level passage on that theme
-5. Write a natural English translation of the passage
-6. Extract key vocabulary from the passage. Cross-reference against the full used-words set from all history entries. Replace any overlapping words until at most 1 repeat remains (ideally zero). Adjust the passage wording if needed to surface fresher vocabulary
-7. Create 3 comprehension questions
-8. Create answers and explanations
-9. Append the current date / category / subtopic / title / vocab to `history.json` and save
-10. Create the `passages/YYYY-MM-DD/` directory at the repository root (writing the files below with the Write tool creates it)
-11. Write the full output (Parts 1–5) to `passages/YYYY-MM-DD/YYYY-MM-DD.md`
-12. Write the same content as a styled, self-contained HTML file to `passages/YYYY-MM-DD/YYYY-MM-DD.html`
-13. Update `index.html` — prepend a new `<li>` entry at the top of the `<ul class="list">` block. The entry **must** include `data-date` and `data-category` attributes so that the month/theme grouping JavaScript picks it up automatically. Use this exact format (replace placeholders):
+4. Refer to the history and select a non-overlapping theme category and subtopic
+5. Generate a B1-level passage on that theme
+6. Write a natural English translation of the passage
+7. Extract key vocabulary from the passage. Cross-reference against the full used-words set from all history entries. Replace any overlapping words until at most 1 repeat remains (ideally zero). Adjust the passage wording if needed to surface fresher vocabulary
+8. Append the current date / category / subtopic / title / vocab to `history.json` and save
+9. Create the `passages/YYYY-MM-DD/` directory at the repository root (writing the files below with the Write tool creates it)
+10. Write the full output (Parts 1–3) to `passages/YYYY-MM-DD/YYYY-MM-DD.md`
+11. Write the same content as a styled, self-contained HTML file to `passages/YYYY-MM-DD/YYYY-MM-DD.html`
+12. Update `index.html` — prepend a new `<li>` entry at the top of the `<ul class="list">` block. The entry **must** include `data-date` and `data-category` attributes so that the month/theme grouping JavaScript picks it up automatically. Use this exact format (replace placeholders):
     ```html
     <li data-date="YYYY-MM-DD" data-category="CATEGORY">
       <a href="passages/YYYY-MM-DD/YYYY-MM-DD.html">
@@ -212,9 +184,9 @@ Each option must include its English and Japanese translation on the same line, 
     </li>
     ```
     `CATEGORY` must be one of the exact strings used elsewhere: `Daily life`, `Travel &amp; tourism`, `Work &amp; school`, `Health &amp; sports`, `Culture &amp; society`, `Media &amp; entertainment`, `Relationships`. Use `&amp;` for `&` in both `data-category` and `<span class="tag">`. New months and themes are grouped automatically by the existing JavaScript — no other changes to `index.html` are needed.
-14. Copy the generated HTML to overwrite `today.html` at the repo root: write exactly the same content as `passages/YYYY-MM-DD/YYYY-MM-DD.html` to `today.html` using the Write tool (Bash/`cp` is not available).
-15. Do NOT run git. The workflow commits and pushes (and triggers the GitHub Pages build).
-16. Output only a short confirmation to the CLI:
+13. Copy the generated HTML to overwrite `today.html` at the repo root: write exactly the same content as `passages/YYYY-MM-DD/YYYY-MM-DD.html` to `today.html` using the Write tool (Bash/`cp` is not available).
+14. Do NOT run git. The workflow commits and pushes (and triggers the GitHub Pages build).
+15. Output only a short confirmation to the CLI:
     `✅ Saved to passages/YYYY-MM-DD/ — [Title]`
     `🌐 https://benjamin-taro.github.io/dele-b1-passage/today.html`
 
@@ -224,6 +196,5 @@ Verify the following before output:
 
 - The passage is within 150–250 words
 - No vocabulary or grammar above B1 has crept in
-- Comprehension question options are clearly distinguishable (not overly tricky)
 - The theme differs from recent entries (confirmed via `history.json`)
 - The `history.json` append is complete
