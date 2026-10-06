@@ -81,13 +81,35 @@ A separate file `vocab-used.json` at the repository root (`vocab-used.json`) mai
 
 **On execution:**
 1. Read `vocab-used.json` (treat as an empty array `[]` if the file does not exist).
-2. When selecting the 8–12 key vocabulary items for Part 3, **only pick words that do not appear in `vocab-used.json`**.
+2. When selecting the NEW vocabulary items for Part 3, **only pick words that do not appear in `vocab-used.json`**.
 3. If a word is so fundamental to the passage topic that it is truly unavoidable, allow at most **1 repeat** — and only if no reasonable synonym exists.
 4. If the draft vocabulary still has more than 1 overlap, revise the passage wording to surface fresher words.
 
 **After generating:**
 5. Append the new vocabulary words to the array in `vocab-used.json`, re-sort alphabetically (case-insensitive), deduplicate, and save.
 6. Save `vocab-used.json` (the workflow commits it — do NOT run git).
+
+### Review Words (meet old words again)
+
+New words alone are never met again, so every passage must also **reuse words from earlier passages**. This overrides the "only new words" rule above for the review words (the "at most 1 repeat" limit applies to the NEW words only).
+
+1. Read `read.json` at the repository root (treat as `{"read": {}, "level": {}}` if missing). `read` maps the dates of passages the learner has finished reading.
+2. Review candidates = the `vocab` of `history.json` entries whose `date` is a key of `read`. Words from passages not yet read are not candidates.
+3. Prefer words first seen **3–30 days before the target date**; if there are too few, use older ones. Do not pick words listed in the `review` array of the 3 most recent history entries.
+4. Choose **3–4 review words** that fit today's theme and use them naturally in the passage body. Do not force a word that does not fit — pick another candidate instead.
+5. The vocabulary table (Part 3) contains **6–8 new words** (not in `vocab-used.json`) **plus the 3–4 review words** (9–12 rows in total). Put new words first, then review words. Prefix each review word with `🔁 ` in the first column, and add this line under the table: `🔁 = 以前の passage に出た単語（復習）`. In the HTML, give review rows `class="review"` with a light background (`#f3f8f1`).
+6. In the new `history.json` entry, keep `vocab` for the new words only and add `"review": ["...", "..."]` for the review words. Do **not** add review words to `vocab-used.json` again.
+7. If there are no review candidates yet (nothing read), skip review words and use new words only.
+
+### Difficulty Adjustment (learner feedback)
+
+`read.json` may contain `level`: a map of date → `"easy"` | `"ok"` | `"hard"`, the learner's rating of that passage. Look at the **5 most recently rated** passages:
+
+- **3 or more `"hard"`** → make it easier: length at the lower end of the range, shorter sentences, new words at the minimum count, review words at the maximum count.
+- **3 or more `"easy"`** → make it harder, still inside the B1 limits defined above: length at the upper end of the range, more varied sentence structures that the level allows, new words at the maximum count.
+- Otherwise → keep the usual difficulty.
+
+Never go outside the B1 level definition. Record the decision in the new `history.json` entry as `"difficulty": "easier" | "same" | "harder"`.
 
 ### Writing After Execution
 
@@ -103,7 +125,9 @@ After the passage is generated, append the current run's record to `history.json
       "category": "Travel & tourism",
       "subtopic": "Travel mishaps",
       "title": "Un problema en el aeropuerto",
-      "vocab": ["equipaje", "reclamar", "vuelo", "retraso", "mostrador", "embarque", "pasaporte", "aduana"]
+      "vocab": ["equipaje", "reclamar", "vuelo", "retraso", "mostrador", "embarque", "pasaporte", "aduana"],
+      "review": ["...", "..."],
+      "difficulty": "same"
     }
   ]
 }
@@ -144,7 +168,7 @@ Do **NOT** include a text-to-speech (TTS) button or any related JavaScript in th
 [English translation of the passage, paragraph by paragraph]
 ```
 
-### Part 3: Vocabulary List (8–12 words)
+### Part 3: Vocabulary List (6–8 new + 3–4 review words)
 
 Pick out key B1 vocabulary from the passage.
 
@@ -165,15 +189,16 @@ Pick out key B1 vocabulary from the passage.
    `⚠️ passages/YYYY-MM-DD/ already exists. To regenerate, delete the folder first.`
    Do NOT proceed further.
 3. Read `history.json` (treat as empty if it does not exist)
-4. Refer to the history and select a non-overlapping theme category and subtopic
-5. Generate a B1-level passage on that theme
-6. Write a natural English translation of the passage
-7. Extract key vocabulary from the passage. Cross-reference against the full used-words set from all history entries. Replace any overlapping words until at most 1 repeat remains (ideally zero). Adjust the passage wording if needed to surface fresher vocabulary
-8. Append the current date / category / subtopic / title / vocab to `history.json` and save
-9. Create the `passages/YYYY-MM-DD/` directory at the repository root (writing the files below with the Write tool creates it)
-10. Write the full output (Parts 1–3) to `passages/YYYY-MM-DD/YYYY-MM-DD.md`
-11. Write the same content as a styled, self-contained HTML file to `passages/YYYY-MM-DD/YYYY-MM-DD.html`
-12. Update `index.html` — prepend a new `<li>` entry at the top of the `<ul class="list">` block. The entry **must** include `data-date` and `data-category` attributes so that the month/theme grouping JavaScript picks it up automatically. Use this exact format (replace placeholders):
+4. Read `read.json` (treat as empty if it does not exist). Decide the difficulty (Difficulty Adjustment) and choose the review words (Review Words) before writing.
+5. Refer to the history and select a non-overlapping theme category and subtopic
+6. Generate a B1-level passage on that theme
+7. Write a natural English translation of the passage
+8. Build the vocabulary table: 6–8 new words (cross-reference `vocab-used.json`; replace overlaps until at most 1 remains) plus the 3–4 review words chosen above, each with all required columns.
+9. Append the current date / category / subtopic / title / vocab to `history.json` and save
+10. Create the `passages/YYYY-MM-DD/` directory at the repository root (writing the files below with the Write tool creates it)
+11. Write the full output (Parts 1–3) to `passages/YYYY-MM-DD/YYYY-MM-DD.md`
+12. Write the same content as a styled, self-contained HTML file to `passages/YYYY-MM-DD/YYYY-MM-DD.html`
+13. Update `index.html` — prepend a new `<li>` entry at the top of the `<ul class="list">` block. The entry **must** include `data-date` and `data-category` attributes so that the month/theme grouping JavaScript picks it up automatically. Use this exact format (replace placeholders):
     ```html
     <li data-date="YYYY-MM-DD" data-category="CATEGORY">
       <a href="passages/YYYY-MM-DD/YYYY-MM-DD.html">
@@ -184,9 +209,9 @@ Pick out key B1 vocabulary from the passage.
     </li>
     ```
     `CATEGORY` must be one of the exact strings used elsewhere: `Daily life`, `Travel &amp; tourism`, `Work &amp; school`, `Health &amp; sports`, `Culture &amp; society`, `Media &amp; entertainment`, `Relationships`. Use `&amp;` for `&` in both `data-category` and `<span class="tag">`. New months and themes are grouped automatically by the existing JavaScript — no other changes to `index.html` are needed.
-13. Copy the generated HTML to overwrite `today.html` at the repo root: write exactly the same content as `passages/YYYY-MM-DD/YYYY-MM-DD.html` to `today.html` using the Write tool (Bash/`cp` is not available).
-14. Do NOT run git. The workflow commits and pushes (and triggers the GitHub Pages build).
-15. Output only a short confirmation to the CLI:
+14. Copy the generated HTML to overwrite `today.html` at the repo root: write exactly the same content as `passages/YYYY-MM-DD/YYYY-MM-DD.html` to `today.html` using the Write tool (Bash/`cp` is not available).
+15. Do NOT run git. The workflow commits and pushes (and triggers the GitHub Pages build).
+16. Output only a short confirmation to the CLI:
     `✅ Saved to passages/YYYY-MM-DD/ — [Title]`
     `🌐 https://benjamin-taro.github.io/dele-b1-passage/today.html`
 
